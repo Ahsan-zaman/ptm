@@ -1,0 +1,88 @@
+<template>
+    <div class="row">
+        <side-bar :links="links" />
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
+                    <h1 class="h2">Sales Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
+                    </div>
+                </div>
+
+                <div class="nav-scroller bg-white shadow-sm mb-3">
+                    <nav class="nav nav-underline">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">Chatter</a>
+                        <a class="nav-link" href="#">Accounts</a>
+                        <a class="nav-link" href="#">Contacts</a>
+                        <a class="nav-link" href="#">Leads</a>
+                        <a class="nav-link" href="#">Campaigns</a>
+                        <a class="nav-link" href="#">Groups</a>
+                    </nav>
+                </div>
+            </div>
+        </main>
+    </div>
+</template>
+
+<script>
+import SideBar from './SideBar.vue'
+    export default {
+        components:{ SideBar },
+        data(){
+            return{
+                links : [
+                    {
+                        name : 'Sales',
+                        link: '/sales',
+                        show: true,
+                        icon: 'bag-check'
+                    },
+                    {
+                        name : 'Lead Generation',
+                        link: '/lead-generation',
+                        show: true,
+                        icon: 'binoculars'
+                    },
+                    {
+                        name : 'Sales Operations',
+                        link: '/sales-operations',
+                        show: true,
+                        icon: 'clipboard-data'
+                    },
+                    {
+                        name : 'Sales Leadership',
+                        link: '/sales-leadership',
+                        show: true,
+                        icon:'people'
+                    },
+                    {
+                        name : 'Relationship Management',
+                        link: '/relationship-management',
+                        show: true,
+                        icon: 'hand-thumbs-up'
+                    },
+                    {
+                        name : 'Sales Console',
+                        link: '/sales-console',
+                        show: false,
+                        icon:'bar-chart-line'
+                    },
+                ]
+            }
+        },
+        beforeCreate(){
+            if(!UserClass.loggedIn()){
+                this.$router.push('/')
+            }
+        }
+    }
+</script>
