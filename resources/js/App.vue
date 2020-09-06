@@ -20,21 +20,21 @@ import Alert from './components/Alert'
                 isLoading : false,
                 
                 alerts : [
-                    {
-                        name : "Error",
-                        type : 'danger',
-                        desc : "Hello, world! This is a toast message. This is a toast message. This is a toast message.",
-                    },
-                    {
-                        name : "Success",
-                        type : 'success',
-                        desc : "Hello, world! This is a toast message. This is a toast message.",
-                    },
-                    {
-                        name : "Primary",
-                        type : 'primary',
-                        desc : "Hello, world! This is a toast message.",
-                    }
+                    // {
+                    //     name : "Error",
+                    //     type : 'danger',
+                    //     desc : "Hello, world! This is a toast message. This is a toast message. This is a toast message.",
+                    // },
+                    // {
+                    //     name : "Success",
+                    //     type : 'success',
+                    //     desc : "Hello, world! This is a toast message. This is a toast message.",
+                    // },
+                    // {
+                    //     name : "Primary",
+                    //     type : 'primary',
+                    //     desc : "Hello, world! This is a toast message.",
+                    // }
                 ]
             }
         },

@@ -30,6 +30,7 @@ window.axios.defaults.headers.common[
 
 window.UserClass = UserClass;
 window.EventBus = EventBus;
+// window.Bootstrap = Bootstrap;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

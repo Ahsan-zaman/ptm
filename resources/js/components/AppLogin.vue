@@ -62,7 +62,7 @@
         },
         beforeCreate(){
             if(UserClass.loggedIn()){
-                this.$router.push('/sales')
+                this.$router.push('/dashboard')
             }
         }
     }

@@ -4,7 +4,7 @@
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
-                    <h1 class="h2">Sales Dashboard</h1>
+                    <h1 class="h2">Invoice Management</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -41,40 +41,46 @@ import SideBar from './SideBar.vue'
             return{
                 links : [
                     {
-                        name : 'Sales',
-                        link: '/sales',
+                        name : 'Dashboard',
+                        link: '/dashboard',
                         show: true,
-                        icon: 'bag-check'
+                        icon: 'bar-chart-line'
                     },
                     {
-                        name : 'Lead Generation',
-                        link: '/lead-generation',
+                        name : 'Stratagic Sourcing',
+                        link: '/strategic-sourcing',
                         show: true,
-                        icon: 'binoculars'
+                        icon: 'file-check'
                     },
                     {
-                        name : 'Sales Operations',
-                        link: '/sales-operations',
+                        name : 'e-Auction',
+                        link: '/e-auction',
                         show: true,
-                        icon: 'clipboard-data'
+                        icon: 'tags'
                     },
                     {
-                        name : 'Sales Leadership',
-                        link: '/sales-leadership',
+                        name : 'Approval Center',
+                        link: '/approval-center',
                         show: true,
-                        icon:'people'
+                        icon: 'check-circle'
                     },
                     {
-                        name : 'Relationship Management',
-                        link: '/relationship-management',
+                        name : 'Invoice Management',
+                        link: '/invoice-management',
                         show: true,
-                        icon: 'hand-thumbs-up'
+                        icon:'file-spreadsheet'
                     },
                     {
-                        name : 'Sales Console',
-                        link: '/sales-console',
+                        name : 'Supplier Management',
+                        link: '/supplier-management',
+                        show: true,
+                        icon: 'people'
+                    },
+                    {
+                        name : 'Settings',
+                        link: '/setting',
                         show: false,
-                        icon:'bar-chart-line'
+                        icon:'gear'
                     },
                 ]
             }

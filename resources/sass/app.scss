@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.bg-red{
+    background-color: $red-500;
+    color: $body-bg;
+}
+.bg-yellow{
+    background-color: $cyan-500;
+    color: $body-bg;
+}
+.bg-green{
+    background-color: $green-500;
+    color: $body-bg;
+}

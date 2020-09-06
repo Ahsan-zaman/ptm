@@ -11042,3 +11042,18 @@ button.close {
   }
 }
 
+.bg-red {
+  background-color: #e3342f;
+  color: #f8fafc;
+}
+
+.bg-yellow {
+  background-color: #6cb2eb;
+  color: #f8fafc;
+}
+
+.bg-green {
+  background-color: #38c172;
+  color: #f8fafc;
+}
+

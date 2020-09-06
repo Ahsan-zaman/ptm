@@ -3,36 +3,21 @@
         <side-bar :links="links" />
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div>
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
-                    <h1 class="h2">Sales Dashboard</h1>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Approval Center</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
                     </div>
                 </div>
-                <div class="nav-scroller bg-white shadow-sm mb-3">
-                    <nav class="nav nav-underline">
 
-                        <a class="nav-link" href="#">Home</a>
-                        <a class="nav-link" href="#">Accounts</a>
-                        <a class="nav-link" href="#">Contacts</a>
-                        <a class="nav-link" href="#">Leads</a>
-                        <a class="nav-link" href="#">Opertunities</a>
-                        <a class="nav-link" href="#">Tasks</a>
-                        <a class="nav-link" href="#">Calendar</a>
-                        <a class="nav-link" href="#">Dashboards</a>
-                        <a class="nav-link" href="#">Notes</a>
-                        <a class="nav-link" href="#">Reports</a>
-                        <a class="nav-link" href="#">Groups</a>
-                        <a class="nav-link" href="#">Forecasts</a>
-                    </nav>
-                </div>
+                <h2>Sales Console</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -157,114 +142,62 @@
                             <td>in</td>
                             <td>libero</td>
                             </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
-                            <tr>
-                            <td>1,015</td>
-                            <td>sodales</td>
-                            <td>ligula</td>
-                            <td>in</td>
-                            <td>libero</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </main>
-        <alert/>
     </div>
 </template>
 
 <script>
 import SideBar from './SideBar.vue'
-import Alert from './Alert'
     export default {
-        components:{ SideBar, Alert },
+        components:{ SideBar },
         data(){
             return{
                 links : [
                     {
-                        name : 'Sales',
-                        link: '/sales',
+                        name : 'Dashboard',
+                        link: '/dashboard',
                         show: true,
-                        icon: 'bag-check'
+                        icon: 'bar-chart-line'
                     },
                     {
-                        name : 'Lead Generation',
-                        link: '/lead-generation',
+                        name : 'Stratagic Sourcing',
+                        link: '/strategic-sourcing',
                         show: true,
-                        icon: 'binoculars'
+                        icon: 'file-check'
                     },
                     {
-                        name : 'Sales Operations',
-                        link: '/sales-operations',
+                        name : 'e-Auction',
+                        link: '/e-auction',
                         show: true,
-                        icon: 'clipboard-data'
+                        icon: 'tags'
                     },
                     {
-                        name : 'Sales Leadership',
-                        link: '/sales-leadership',
+                        name : 'Approval Center',
+                        link: '/approval-center',
                         show: true,
-                        icon:'people'
+                        icon: 'check-circle'
                     },
                     {
-                        name : 'Relationship Management',
-                        link: '/relationship-management',
+                        name : 'Invoice Management',
+                        link: '/invoice-management',
                         show: true,
-                        icon: 'hand-thumbs-up'
+                        icon:'file-spreadsheet'
                     },
                     {
-                        name : 'Sales Console',
-                        link: '/sales-console',
+                        name : 'Supplier Management',
+                        link: '/supplier-management',
+                        show: true,
+                        icon: 'people'
+                    },
+                    {
+                        name : 'Settings',
+                        link: '/setting',
                         show: false,
-                        icon:'bar-chart-line'
+                        icon:'gear'
                     },
                 ]
             }
@@ -276,20 +209,3 @@ import Alert from './Alert'
         }
     }
 </script>
-<style>
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  overflow-y: hidden;
-}
-.nav-scroller .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  margin-top: -1px;
-  overflow-x: auto;
-  color: rgba(255, 255, 255, .75);
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-</style>

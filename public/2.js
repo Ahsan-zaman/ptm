@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeCreate: function beforeCreate() {
     if (UserClass.loggedIn()) {
-      this.$router.push('/sales');
+      this.$router.push('/dashboard');
     }
   }
 });

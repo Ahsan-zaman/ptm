@@ -1,110 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SideBar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideBar.vue */ "./resources/js/components/SideBar.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -170,46 +75,56 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       links: [{
-        name: 'Sales',
-        link: '/sales',
+        name: 'Dashboard',
+        link: '/dashboard',
         show: true,
-        icon: 'bag-check'
+        icon: 'bar-chart-line'
       }, {
-        name: 'Lead Generation',
-        link: '/lead-generation',
+        name: 'Stratagic Sourcing',
+        link: '/strategic-sourcing',
         show: true,
-        icon: 'binoculars'
+        icon: 'file-check'
       }, {
-        name: 'Sales Operations',
-        link: '/sales-operations',
+        name: 'e-Auction',
+        link: '/e-auction',
         show: true,
-        icon: 'clipboard-data'
+        icon: 'tags'
       }, {
-        name: 'Sales Leadership',
-        link: '/sales-leadership',
+        name: 'Approval Center',
+        link: '/approval-center',
+        show: true,
+        icon: 'check-circle'
+      }, {
+        name: 'Invoice Management',
+        link: '/invoice-management',
+        show: true,
+        icon: 'file-spreadsheet'
+      }, {
+        name: 'Supplier Management',
+        link: '/supplier-management',
         show: true,
         icon: 'people'
       }, {
-        name: 'Relationship Management',
-        link: '/relationship-management',
-        show: true,
-        icon: 'hand-thumbs-up'
-      }, {
-        name: 'Sales Console',
-        link: '/sales-console',
-        show: true,
-        icon: 'bar-chart-line'
+        name: 'Settings',
+        link: '/setting',
+        show: false,
+        icon: 'gear'
       }]
     };
+  },
+  beforeCreate: function beforeCreate() {
+    if (!UserClass.loggedIn()) {
+      this.$router.push('/');
+    }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6& ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -224,7 +139,58 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "row" },
-    [_c("side-bar", { attrs: { links: _vm.links } }), _vm._v(" "), _vm._m(0)],
+    [
+      _c("side-bar", { attrs: { links: _vm.links } }),
+      _vm._v(" "),
+      _c("main", { staticClass: "col-md-9 ml-sm-auto col-lg-10 px-md-4" }, [
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom"
+            },
+            [
+              _c("h1", { staticClass: "h2" }, [_vm._v("Stratagic Sourcing")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-sm btn-primary",
+                    attrs: { type: "button" }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "bi",
+                        attrs: {
+                          width: "18",
+                          height: "18",
+                          fill: "currentColor"
+                        }
+                      },
+                      [
+                        _c("use", {
+                          attrs: {
+                            "xlink:href":
+                              "/assets/icons/bootstrap-icons.svg#plus"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v("\n                    New RFP\n                ")
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ])
+    ],
     1
   )
 }
@@ -233,273 +199,76 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "main",
-      { staticClass: "col-md-9 ml-sm-auto col-lg-10 px-md-4" },
-      [
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass:
-                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-            },
-            [
-              _c("h1", { staticClass: "h2" }, [_vm._v("Dashboard")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
-                _c("div", { staticClass: "btn-group mr-2" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-sm btn-outline-secondary",
-                      attrs: { type: "button" }
-                    },
-                    [_vm._v("Share")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-sm btn-outline-secondary",
-                      attrs: { type: "button" }
-                    },
-                    [_vm._v("Export")]
-                  )
-                ]),
-                _vm._v(" "),
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row align-items-start" }, [
+        _c("div", { staticClass: "col-12 col-md-6" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-4 p-2" }, [
+              _c("div", { staticClass: "bg-red rounded-lg shadow" }, [
                 _c(
-                  "button",
+                  "span",
                   {
-                    staticClass:
-                      "btn btn-sm btn-outline-secondary dropdown-toggle",
-                    attrs: { type: "button" }
+                    staticClass: "d-block px-3 py-2",
+                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
                   },
-                  [
-                    _c("span", { attrs: { "data-feather": "calendar" } }),
-                    _vm._v("\n                    This week\n                ")
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("h2", [_vm._v("Sales Leadership")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "table-responsive" }, [
-            _c("table", { staticClass: "table table-striped table-sm" }, [
-              _c("thead", [
-                _c("tr", [
-                  _c("th", [_vm._v("#")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("Header")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("Header")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("Header")]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v("Header")])
+                  [_vm._v("Sourcing")]
+                ),
+                _vm._v(" "),
+                _c("h3", { staticClass: "p-3" }, [
+                  _vm._v(
+                    "\n                                    1 project\n                                "
+                  )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", [_vm._v("1,001")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Lorem")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("ipsum")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("dolor")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sit")])
-                ]),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-4 p-2" }, [
+              _c("div", { staticClass: "bg-yellow rounded-lg shadow" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass: "d-block px-3 py-2",
+                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
+                  },
+                  [_vm._v("Awarded")]
+                ),
                 _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,002")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("amet")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("consectetur")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("adipiscing")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("elit")])
-                ]),
+                _c("h3", { staticClass: "p-3" }, [
+                  _vm._v(
+                    "\n                                    0 Awarded\n                                "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-4 p-2" }, [
+              _c("div", { staticClass: "bg-green rounded-lg shadow" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass: "d-block px-3 py-2",
+                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
+                  },
+                  [_vm._v("Completed")]
+                ),
                 _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,003")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Integer")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nec")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("odio")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Praesent")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,003")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("libero")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Sed")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("cursus")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("ante")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,004")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("dapibus")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("diam")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Sed")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nisi")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,005")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Nulla")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("quis")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sem")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("at")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,006")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nibh")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("elementum")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("imperdiet")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Duis")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,007")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sagittis")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("ipsum")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Praesent")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("mauris")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,008")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Fusce")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nec")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("tellus")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sed")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,009")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("augue")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("semper")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("porta")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Mauris")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,010")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("massa")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Vestibulum")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("lacinia")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("arcu")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,011")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("eget")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nulla")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Class")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("aptent")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,012")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("taciti")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sociosqu")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("ad")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("litora")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,013")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("torquent")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("per")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("conubia")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("nostra")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,014")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("per")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("inceptos")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("himenaeos")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("Curabitur")])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [_vm._v("1,015")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("sodales")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("ligula")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("in")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("libero")])
+                _c("h3", { staticClass: "p-3" }, [
+                  _vm._v(
+                    "\n                                    0 Completed\n                                "
+                  )
                 ])
               ])
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 col-md-6 bg-primary" }, [
+          _vm._v(
+            "\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sit eum, totam aliquid officiis id aut earum sed accusamus tempore, perspiciatis possimus iure molestiae culpa nisi. Enim eos placeat sint.\n                "
+          )
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -508,17 +277,17 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/components/SalesLeadership.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/SalesLeadership.vue ***!
-  \*****************************************************/
+/***/ "./resources/js/components/StrategicSourcing.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/StrategicSourcing.vue ***!
+  \*******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SalesLeadership.vue?vue&type=template&id=75dbe4d6& */ "./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6&");
-/* harmony import */ var _SalesLeadership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SalesLeadership.vue?vue&type=script&lang=js& */ "./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js&");
+/* harmony import */ var _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& */ "./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&");
+/* harmony import */ var _StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StrategicSourcing.vue?vue&type=script&lang=js& */ "./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -528,9 +297,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SalesLeadership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -540,38 +309,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/SalesLeadership.vue"
+component.options.__file = "resources/js/components/StrategicSourcing.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesLeadership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SalesLeadership.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SalesLeadership.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesLeadership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./StrategicSourcing.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& ***!
+  \**************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SalesLeadership.vue?vue&type=template&id=75dbe4d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SalesLeadership.vue?vue&type=template&id=75dbe4d6&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesLeadership_vue_vue_type_template_id_75dbe4d6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

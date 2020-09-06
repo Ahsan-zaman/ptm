@@ -1,14 +1,27 @@
 <template>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">Nezo PTM</a>
+    <nav class="navbar justify-content-end navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-auto px-3" href="/">PTM</a>
         <button v-if="isLogged" class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
+          <svg class="bi" width="20" height="20" fill="currentColor">
+              <use xlink:href="/assets/icons/bootstrap-icons.svg#info-circle"/>
+          </svg>
+        </button>
+        <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
+          <svg class="bi" width="20" height="20" fill="currentColor">
+              <use xlink:href="/assets/icons/bootstrap-icons.svg#bell"/>
+          </svg>
+        </button>
+        <drop-down/>
     </nav>
 </template>
 
 <script>
+import DropDown from "./DropDown"
 export default {
+    components:{ DropDown },
     data(){
       return{
         isLogged : UserClass.loggedIn()
