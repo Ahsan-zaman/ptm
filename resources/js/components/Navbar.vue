@@ -1,20 +1,22 @@
 <template>
-    <nav class="navbar justify-content-end navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar justify-content-end navbar-dark bg-dark sticky-top flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 mr-auto px-3" href="/">PTM</a>
         <button v-if="isLogged" class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
-          <svg class="bi" width="20" height="20" fill="currentColor">
-              <use xlink:href="/assets/icons/bootstrap-icons.svg#info-circle"/>
-          </svg>
-        </button>
-        <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
-          <svg class="bi" width="20" height="20" fill="currentColor">
-              <use xlink:href="/assets/icons/bootstrap-icons.svg#bell"/>
-          </svg>
-        </button>
-        <drop-down/>
+        <div class="d-none d-md-block">
+          <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
+            <svg class="bi" width="20" height="20" fill="currentColor">
+                <use xlink:href="/assets/icons/bootstrap-icons.svg#info-circle"/>
+            </svg>
+          </button>
+          <button class="btn btn-outline-secondary btn-sm p-2 mr-3 rounded-circle" type="button" >
+            <svg class="bi" width="20" height="20" fill="currentColor">
+                <use xlink:href="/assets/icons/bootstrap-icons.svg#bell"/>
+            </svg>
+          </button>
+          <drop-down/>
+        </div>
     </nav>
 </template>
 
@@ -86,8 +88,6 @@ export default {
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
 
 .navbar .navbar-toggler {

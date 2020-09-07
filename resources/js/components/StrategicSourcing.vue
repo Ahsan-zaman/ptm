@@ -7,7 +7,7 @@
                     <h1 class="h2">Stratagic Sourcing</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
 
-                    <button type="button" class="btn btn-sm btn-primary">
+                    <button @click="$router.push('/strategic-sourcing/new')" type="button" class="btn btn-sm btn-primary">
                         <svg class="bi" width="18" height="18" fill="currentColor">
                             <use xlink:href="/assets/icons/bootstrap-icons.svg#plus"/>
                         </svg>
