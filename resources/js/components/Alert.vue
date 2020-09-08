@@ -1,7 +1,7 @@
 <template>
-    <div class="p-3" style="z-index:999;position: fixed; bottom: 0; left: 0;">
+    <div style="z-index:999;position: fixed; bottom: 0; left: 0;">
         <transition-group name="slide-fade">
-            <div v-for="(alert,i) in alerts" :key="alert.name" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div v-for="(alert,i) in alerts" :key="alert.id" class="toast show m-3" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header" :class="`text-${alert.type}`">
                     <svg class="bi mr-2" width="20" height="20" fill="currentColor">
                         <use :xlink:href="`/assets/icons/bootstrap-icons.svg#${getIcon(alert.type)}`"/>
@@ -17,7 +17,6 @@
                     {{alert.desc}}
                 </div>
             </div>
-        
         </transition-group>
     </div>
 </template>

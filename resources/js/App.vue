@@ -41,12 +41,18 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
             }
         },
         mounted(){
-            console.log('bootstrap', bootstrap)
+            // console.log('bootstrap', bootstrap)
             EventBus.$on("Search", () => {
                 alert("search")
             })
             EventBus.$on("alert", (d) => {
-                alert("search")
+                let newIndex = this.alerts.length
+                this.alerts.push(d)
+                if(d.time){
+                    setTimeout(()=>{
+                        this.alerts.splice(newIndex,1)
+                    },d.time)
+                }
             })
             EventBus.$on("loading", () => {
                 this.isLoading = true

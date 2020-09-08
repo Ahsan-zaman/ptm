@@ -2074,12 +2074,20 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    console.log('bootstrap', bootstrap_dist_js_bootstrap_min_js__WEBPACK_IMPORTED_MODULE_3___default.a);
+    // console.log('bootstrap', bootstrap)
     EventBus.$on("Search", function () {
       alert("search");
     });
     EventBus.$on("alert", function (d) {
-      alert("search");
+      var newIndex = _this.alerts.length;
+
+      _this.alerts.push(d);
+
+      if (d.time) {
+        setTimeout(function () {
+          _this.alerts.splice(newIndex, 1);
+        }, d.time);
+      }
     });
     EventBus.$on("loading", function () {
       _this.isLoading = true;
@@ -2118,7 +2126,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -6236,7 +6243,6 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "p-3",
       staticStyle: {
         "z-index": "999",
         position: "fixed",
@@ -6252,8 +6258,8 @@ var render = function() {
           return _c(
             "div",
             {
-              key: alert.name,
-              staticClass: "toast show",
+              key: alert.id,
+              staticClass: "toast show m-3",
               attrs: {
                 role: "alert",
                 "aria-live": "assertive",
@@ -21908,7 +21914,7 @@ __webpack_require__.r(__webpack_exports__);
     path: '/strategic-sourcing/new',
     name: 'newRFP',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/NewsRFP.vue */ "./resources/js/components/NewsRFP.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(0), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ../components/NewsRFP.vue */ "./resources/js/components/NewsRFP.vue"));
     }
   }]
 }));

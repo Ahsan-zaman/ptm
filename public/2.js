@@ -11,6 +11,253 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SideBar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideBar.vue */ "./resources/js/components/SideBar.vue");
 /* harmony import */ var _Alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Alert */ "./resources/js/components/Alert.vue");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -241,13 +488,58 @@ __webpack_require__.r(__webpack_exports__);
       publicRFX: false,
       tabs: ['Project Info', // 'Select Template',
       'Time Rule & payment', 'Select Supplier', 'Summary'],
-      active: 0,
+      active: 1,
       // form2 
       start: "",
       end: "",
-      startTime: new Date().getHours() + ":" + new Date().getMinutes(),
-      endTime: new Date().getHours() + ":" + new Date().getMinutes(),
-      award: ""
+      startTime: ("0" + new Date().getHours()).substr(-2) + ":" + new Date().getMinutes(),
+      endTime: ("0" + new Date().getHours()).substr(-2) + ":" + new Date().getMinutes(),
+      award: "",
+      payOpt: "",
+      mySuppliers: [// {
+        //     name : 'Procurement tender management',
+        //     description : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est maxime accusantium saepe dignissimos, impedit repudiandae perferendis quaerat blanditiis deleniti.',
+        //     id : Math.random(1000),
+        //     checked : false,
+        //     profile : '/assets/profile_1.jpg'
+        // },
+        // {
+        //     name : 'Procurement tender management',
+        //     description : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est maxime accusantium saepe dignissimos, impedit repudiandae perferendis quaerat blanditiis deleniti.',
+        //     id : Math.random(1000),
+        //     checked : false,
+        //     profile : '/assets/profile_1.jpg'
+        // },
+        // {
+        //     name : 'Procurement tender management',
+        //     description : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est maxime accusantium saepe dignissimos, impedit repudiandae perferendis quaerat blanditiis deleniti.',
+        //     id : Math.random(1000),
+        //     checked : false,
+        //     profile : '/assets/profile_1.jpg'
+        // },
+      ],
+      MPSuppliers: [{
+        name: 'Saudi Procurement Service',
+        description: 'Management and Business Professionals and Administrative Services',
+        id: Math.random(1000),
+        checked: false,
+        profile: '/assets/1.png'
+      }, {
+        name: 'FP Group',
+        description: 'Electrical Systems and Lighting and Components and Accessories and Supplies',
+        id: Math.random(1000),
+        checked: false,
+        profile: '/assets/2.jpeg'
+      }, {
+        name: 'BONYAT ALBENAA FACTORY',
+        description: 'Building and Construction Machinery and Accessories',
+        id: Math.random(1000),
+        checked: false,
+        profile: '/assets/3.jpg'
+      }],
+      supName: "",
+      supEmail: "",
+      inviteSuppliers: []
     };
   },
   mounted: function mounted() {},
@@ -256,6 +548,13 @@ __webpack_require__.r(__webpack_exports__);
       if (this.active == 0) {
         if (!this.$refs.form1.checkValidity()) {
           this.$refs.form1.classList.add('was-validated');
+          EventBus.$emit('alert', {
+            name: "Form Validation",
+            type: 'danger',
+            desc: "Please fill in all the required fields",
+            id: Math.random(10000),
+            time: 5000
+          });
         } else {
           // console.log('this.tabs', this.tabs)
           if (this.active < this.tabs.length - 1) {
@@ -272,9 +571,27 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       } else if (this.active == 2) {
-        // console.log('this.tabs', this.tabs)
-        if (this.active < this.tabs.length - 1) {
-          this.active = this.active + 1;
+        var sMySup = this.mySuppliers.filter(function (s) {
+          return s.checked;
+        }).length;
+        var sMPSup = this.MPSuppliers.filter(function (s) {
+          return s.checked;
+        }).length;
+        var sInviteSup = this.inviteSuppliers.length;
+
+        if (sMySup || sMPSup || sInviteSup) {
+          // Go to summary 
+          if (this.active < this.tabs.length - 1) {
+            this.active = this.active + 1;
+          }
+        } else {
+          EventBus.$emit('alert', {
+            name: "Supplier outage",
+            type: 'danger',
+            desc: "Please select atleast one supplier or invite them.",
+            id: Math.random(10000),
+            time: 5000
+          });
         }
       }
     },
@@ -295,6 +612,60 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return str;
+    },
+    selectSup: function selectSup(i, str) {
+      if (str == "MP") {
+        this.MPSuppliers[i].checked = !this.MPSuppliers[i].checked;
+      } else {
+        this.mySuppliers[i].checked = !this.mySuppliers[i].checked;
+      }
+    },
+    selectAll: function selectAll(str) {
+      if (str == "MP") {
+        if (!this.allSelectedMP) {
+          this.MPSuppliers.forEach(function (s) {
+            return s.checked = true;
+          });
+        } else {
+          this.MPSuppliers.forEach(function (s) {
+            return s.checked = !s.checked;
+          });
+        }
+      } else {
+        if (!this.allSelected) {
+          this.mySuppliers.forEach(function (s) {
+            return s.checked = true;
+          });
+        } else {
+          this.mySuppliers.forEach(function (s) {
+            return s.checked = !s.checked;
+          });
+        }
+      }
+    },
+    validateSup: function validateSup(e) {
+      e.preventDefault();
+
+      if (!this.$refs.form3.checkValidity()) {
+        this.$refs.form3.classList.add('was-validated');
+        EventBus.$emit('alert', {
+          name: "Form Validation",
+          type: 'danger',
+          desc: "Please fill in all the required fields",
+          id: Math.random(10000),
+          time: 5000
+        });
+      } else {
+        this.inviteSuppliers.push({
+          name: this.supName,
+          email: this.supEmail
+        });
+        this.supName = "";
+        this.supEmail = "";
+      }
+    },
+    removeSup: function removeSup(i) {
+      this.inviteSuppliers.splice(i, 1);
     }
   },
   watch: {
@@ -310,6 +681,54 @@ __webpack_require__.r(__webpack_exports__);
   beforeCreate: function beforeCreate() {
     if (!UserClass.loggedIn()) {
       this.$router.push('/');
+    }
+  },
+  computed: {
+    allSelected: function allSelected() {
+      var check = true;
+
+      var _iterator = _createForOfIteratorHelper(this.mySuppliers),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var s = _step.value;
+
+          if (!s.checked) {
+            check = false;
+            break;
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return check;
+    },
+    allSelectedMP: function allSelectedMP() {
+      var check = true;
+
+      var _iterator2 = _createForOfIteratorHelper(this.MPSuppliers),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var s = _step2.value;
+
+          if (!s.checked) {
+            check = false;
+            break;
+          }
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      return check;
     }
   }
 });
@@ -328,7 +747,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-scroller {\r\n  position: relative;\r\n  z-index: 2;\r\n  overflow-y: hidden;\n}\n.nav-scroller .nav {\r\n  display: flex;\r\n  flex-wrap: nowrap;\r\n  margin-top: -1px;\r\n  overflow-x: auto;\r\n  color: rgba(255, 255, 255, .75);\r\n  text-align: center;\r\n  white-space: nowrap;\r\n  -webkit-overflow-scrolling: touch;\n}\n.tab-controlers .done{\r\n    color: var(--bs-success);\n}\n.tab-controlers .active{\r\n    background-color: var(--bs-success);\r\n    color: #fff;\r\n    padding: .5rem .75rem;\r\n    border-radius: 4px;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-scroller {\nposition: relative;\nz-index: 2;\noverflow-y: hidden;\n}\n.nav-scroller .nav {\ndisplay: flex;\nflex-wrap: nowrap;\nmargin-top: -1px;\noverflow-x: auto;\ncolor: rgba(255, 255, 255, .75);\ntext-align: center;\nwhite-space: nowrap;\n-webkit-overflow-scrolling: touch;\n}\n.tab-controlers .done{\n    color: var(--bs-success);\n}\n.tab-controlers .active{\n    background-color: var(--bs-success);\n    color: #fff;\n    padding: .5rem .75rem;\n    border-radius: 4px;\n}\n", ""]);
 
 // exports
 
@@ -1040,14 +1459,10 @@ var render = function() {
                                     }
                                   ],
                                   staticClass: "form-check-input",
-                                  attrs: {
-                                    type: "checkbox",
-                                    value: "",
-                                    id: "invalidCheck"
-                                  },
+                                  attrs: { type: "checkbox" },
                                   domProps: {
                                     checked: Array.isArray(_vm.publicRFX)
-                                      ? _vm._i(_vm.publicRFX, "") > -1
+                                      ? _vm._i(_vm.publicRFX, null) > -1
                                       : _vm.publicRFX
                                   },
                                   on: {
@@ -1056,7 +1471,7 @@ var render = function() {
                                         $$el = $event.target,
                                         $$c = $$el.checked ? true : false
                                       if (Array.isArray($$a)) {
-                                        var $$v = "",
+                                        var $$v = null,
                                           $$i = _vm._i($$a, $$v)
                                         if ($$el.checked) {
                                           $$i < 0 &&
@@ -1076,13 +1491,10 @@ var render = function() {
                                 _vm._v(" "),
                                 _c(
                                   "label",
-                                  {
-                                    staticClass: "form-check-label",
-                                    attrs: { for: "invalidCheck" }
-                                  },
+                                  { staticClass: "form-check-label" },
                                   [
                                     _vm._v(
-                                      "\n                                Do you want to make this RFX public?\n                            "
+                                      "\n                                    Do you want to make this RFX public?\n                                "
                                     )
                                   ]
                                 )
@@ -1323,13 +1735,1197 @@ var render = function() {
                                   "\n                                Please provide a valid date.\n                            "
                                 )
                               ])
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-12" }, [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "form-label",
+                                  attrs: { for: "pay options" }
+                                },
+                                [_vm._v("Payment Options")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "select",
+                                {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.payOpt,
+                                      expression: "payOpt"
+                                    }
+                                  ],
+                                  staticClass: "form-select",
+                                  attrs: { id: "pay options", required: "" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.payOpt = $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "option",
+                                    {
+                                      attrs: {
+                                        selected: "",
+                                        disabled: "",
+                                        value: ""
+                                      }
+                                    },
+                                    [_vm._v("Choose...")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("option", [_vm._v("Full payment")]),
+                                  _vm._v(" "),
+                                  _c("option", [_vm._v("Milestone payment")])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "invalid-feedback" }, [
+                                _vm._v(
+                                  "\n                                Please select a payment option.\n                            "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _vm.payOpt == "Milestone payment"
+                              ? _c("div", [
+                                  _c(
+                                    "label",
+                                    {
+                                      staticClass: "form-label",
+                                      attrs: { for: "upfront" }
+                                    },
+                                    [_vm._v("Upfront payment")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "input-group" }, [
+                                    _c("input", {
+                                      staticClass: "form-control",
+                                      attrs: {
+                                        type: "number",
+                                        id: "upfront",
+                                        placeholder: "Enter percentage",
+                                        required: ""
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [_vm._v("%")]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "invalid-feedback" },
+                                    [
+                                      _vm._v(
+                                        "\n                                Please choose a username.\n                            "
+                                      )
+                                    ]
+                                  )
+                                ])
+                              : _vm._e()
                           ]
                         )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.active == 2
+                      ? _c(
+                          "div",
+                          {
+                            key: 3,
+                            staticClass: "mx-auto",
+                            staticStyle: { "max-width": "800px" }
+                          },
+                          [
+                            _c(
+                              "ul",
+                              {
+                                staticClass:
+                                  "nav nav-tabs d-flex justify-content-center",
+                                attrs: { id: "myTab", role: "tablist" }
+                              },
+                              [
+                                _c(
+                                  "li",
+                                  {
+                                    staticClass: "nav-item",
+                                    attrs: { role: "presentation" }
+                                  },
+                                  [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "nav-link active",
+                                        attrs: {
+                                          id: "home-tab",
+                                          "data-toggle": "tab",
+                                          href: "#home",
+                                          role: "tab",
+                                          "aria-controls": "home",
+                                          "aria-selected": "true"
+                                        }
+                                      },
+                                      [_vm._v("My suppliers list")]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "li",
+                                  {
+                                    staticClass: "nav-item",
+                                    attrs: { role: "presentation" }
+                                  },
+                                  [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "nav-link",
+                                        attrs: {
+                                          id: "profile-tab",
+                                          "data-toggle": "tab",
+                                          href: "#profile",
+                                          role: "tab",
+                                          "aria-controls": "profile",
+                                          "aria-selected": "false"
+                                        }
+                                      },
+                                      [_vm._v("Suppliers from marketplace")]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "li",
+                                  {
+                                    staticClass: "nav-item",
+                                    attrs: { role: "presentation" }
+                                  },
+                                  [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "nav-link",
+                                        attrs: {
+                                          id: "contact-tab",
+                                          "data-toggle": "tab",
+                                          href: "#contact",
+                                          role: "tab",
+                                          "aria-controls": "contact",
+                                          "aria-selected": "false"
+                                        }
+                                      },
+                                      [_vm._v("Invite new suppliers")]
+                                    )
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "tab-content",
+                                attrs: { id: "myTabContent" }
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane fade show active",
+                                    attrs: { id: "home", role: "tabpanel" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "container py-3 px-0 px-md-3"
+                                      },
+                                      [
+                                        _c("div", { staticClass: "row" }, [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "my-1 col-12 col-sm-8 col-md-9 col-lg-10 d-flex align-items-center"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "input-group mb-2 px-1"
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "input-group-text bg-transparent text-primary border-right-0"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "svg",
+                                                        {
+                                                          staticClass: "bi",
+                                                          attrs: {
+                                                            width: "18",
+                                                            height: "18",
+                                                            fill: "currentColor"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("use", {
+                                                            attrs: {
+                                                              "xlink:href":
+                                                                "/assets/icons/bootstrap-icons.svg#search"
+                                                            }
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("input", {
+                                                    staticClass:
+                                                      "form-control border-left-0",
+                                                    attrs: {
+                                                      type: "text",
+                                                      placeholder:
+                                                        "Search my suppliers"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      staticClass:
+                                                        "btn btn-outline-primary"
+                                                    },
+                                                    [_vm._v("Search")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "my-1 col-12 col-sm-4 col-md-3 col-lg-2"
+                                            },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "btn btn-sm border-0 float-right",
+                                                  class: _vm.allSelected
+                                                    ? "btn-dark"
+                                                    : "btn-outline-dark",
+                                                  on: { click: _vm.selectAll }
+                                                },
+                                                [_vm._v(" Select all ")]
+                                              )
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _vm._l(_vm.mySuppliers, function(s, i) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: s.id,
+                                              staticClass:
+                                                "row hover link-dark my-2 border-bottom py-3",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.selectSup(i)
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-3 col-sm-2 col-lg-1"
+                                                },
+                                                [
+                                                  _c("div", {
+                                                    staticClass:
+                                                      "rounded shadow",
+                                                    staticStyle: {
+                                                      width: "55px",
+                                                      height: "55px"
+                                                    },
+                                                    style:
+                                                      "background:url(" +
+                                                      s.profile +
+                                                      ") center/cover no-repeat"
+                                                  })
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-7 col-sm-9 col-lg-10 d-flex flex-column justify-content-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-bold"
+                                                    },
+                                                    [_vm._v(_vm._s(s.name))]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "d-none d-sm-block"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(s.description)
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-2 col-sm-1 d-flex align-items-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "svg",
+                                                    {
+                                                      staticClass: "bi",
+                                                      attrs: {
+                                                        width: "20",
+                                                        height: "20",
+                                                        fill: "currentColor"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("use", {
+                                                        attrs: {
+                                                          "xlink:href":
+                                                            "/assets/icons/bootstrap-icons.svg#" +
+                                                            (s.checked
+                                                              ? "check-square-fill"
+                                                              : "check-square")
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        })
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane fade",
+                                    attrs: { id: "profile", role: "tabpanel" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "container py-3 px-0 px-md-3"
+                                      },
+                                      [
+                                        _c("div", { staticClass: "row" }, [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "my-1 col-12 col-sm-8 col-md-9 col-lg-10 d-flex align-items-center"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "input-group mb-2 px-1"
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "input-group-text bg-transparent text-primary border-right-0"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "svg",
+                                                        {
+                                                          staticClass: "bi",
+                                                          attrs: {
+                                                            width: "18",
+                                                            height: "18",
+                                                            fill: "currentColor"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("use", {
+                                                            attrs: {
+                                                              "xlink:href":
+                                                                "/assets/icons/bootstrap-icons.svg#search"
+                                                            }
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("input", {
+                                                    staticClass:
+                                                      "form-control border-left-0",
+                                                    attrs: {
+                                                      type: "text",
+                                                      placeholder:
+                                                        "Search my suppliers"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      staticClass:
+                                                        "btn btn-outline-primary"
+                                                    },
+                                                    [_vm._v("Search")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "my-1 col-12 col-sm-4 col-md-3 col-lg-2"
+                                            },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "btn btn-sm border-0 float-right",
+                                                  class: _vm.allSelectedMP
+                                                    ? "btn-dark"
+                                                    : "btn-outline-dark",
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.selectAll("MP")
+                                                    }
+                                                  }
+                                                },
+                                                [_vm._v(" Select all ")]
+                                              )
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _vm._l(_vm.MPSuppliers, function(s, i) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: s.id,
+                                              staticClass:
+                                                "row hover link-dark my-2 border-bottom py-3",
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.selectSup(i, "MP")
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-3 col-sm-2 col-lg-1"
+                                                },
+                                                [
+                                                  _c("div", {
+                                                    staticClass:
+                                                      "rounded shadow",
+                                                    staticStyle: {
+                                                      width: "55px",
+                                                      height: "55px"
+                                                    },
+                                                    style:
+                                                      "background:url(" +
+                                                      s.profile +
+                                                      ") center/cover no-repeat"
+                                                  })
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-7 col-sm-9 col-lg-10 d-flex flex-column justify-content-center"
+                                                },
+                                                [
+                                                  _c("span", [
+                                                    _vm._v(_vm._s(s.name))
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "d-none d-sm-block"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(s.description)
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "col-2 col-sm-1 d-flex align-items-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "svg",
+                                                    {
+                                                      staticClass: "bi",
+                                                      attrs: {
+                                                        width: "20",
+                                                        height: "20",
+                                                        fill: "currentColor"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("use", {
+                                                        attrs: {
+                                                          "xlink:href":
+                                                            "/assets/icons/bootstrap-icons.svg#" +
+                                                            (s.checked
+                                                              ? "check-square-fill"
+                                                              : "check-square")
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        })
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "tab-pane fade",
+                                    attrs: { id: "contact", role: "tabpanel" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "container py-3 px-0 px-md-3"
+                                      },
+                                      [
+                                        _c(
+                                          "form",
+                                          {
+                                            ref: "form3",
+                                            staticClass:
+                                              "row g-3 needs-validation",
+                                            attrs: { novalidate: "" },
+                                            on: { submit: _vm.validateSup }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "my-3 col-12 col-md-4 col-lg-5"
+                                              },
+                                              [
+                                                _c("input", {
+                                                  directives: [
+                                                    {
+                                                      name: "model",
+                                                      rawName: "v-model",
+                                                      value: _vm.supName,
+                                                      expression: "supName"
+                                                    }
+                                                  ],
+                                                  staticClass: "form-control",
+                                                  attrs: {
+                                                    type: "text",
+                                                    placeholder:
+                                                      "Enter supplier name",
+                                                    id: "esn",
+                                                    required: ""
+                                                  },
+                                                  domProps: {
+                                                    value: _vm.supName
+                                                  },
+                                                  on: {
+                                                    input: function($event) {
+                                                      if (
+                                                        $event.target.composing
+                                                      ) {
+                                                        return
+                                                      }
+                                                      _vm.supName =
+                                                        $event.target.value
+                                                    }
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "invalid-feedback"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                Please provide a name.\n                                            "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "my-3 col-12 col-md-4 col-lg-5"
+                                              },
+                                              [
+                                                _c("input", {
+                                                  directives: [
+                                                    {
+                                                      name: "model",
+                                                      rawName: "v-model",
+                                                      value: _vm.supEmail,
+                                                      expression: "supEmail"
+                                                    }
+                                                  ],
+                                                  staticClass: "form-control",
+                                                  attrs: {
+                                                    type: "email",
+                                                    placeholder:
+                                                      "Enter supplier email",
+                                                    id: "ese",
+                                                    required: ""
+                                                  },
+                                                  domProps: {
+                                                    value: _vm.supEmail
+                                                  },
+                                                  on: {
+                                                    input: function($event) {
+                                                      if (
+                                                        $event.target.composing
+                                                      ) {
+                                                        return
+                                                      }
+                                                      _vm.supEmail =
+                                                        $event.target.value
+                                                    }
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "invalid-feedback"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                Please provide a valide email.\n                                            "
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "my-3 col-12 col-md-4 col-lg-2"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn btn-outline-success float-right",
+                                                    attrs: { type: "submit" },
+                                                    on: {
+                                                      click: _vm.validateSup
+                                                    }
+                                                  },
+                                                  [_vm._v(" Add ")]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _vm._l(_vm.inviteSuppliers, function(
+                                          s,
+                                          i
+                                        ) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: i,
+                                              staticClass:
+                                                "row my-3 border-bottom py-2"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                { staticClass: "col-5" },
+                                                [_vm._v(_vm._s(s.name))]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "col-5" },
+                                                [_vm._v(_vm._s(s.email))]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "col-2" },
+                                                [
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass:
+                                                        "text-danger hover",
+                                                      attrs: {
+                                                        title: "Remove supplier"
+                                                      },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.removeSup(
+                                                            i
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "svg",
+                                                        {
+                                                          staticClass: "bi",
+                                                          attrs: {
+                                                            width: "20",
+                                                            height: "20",
+                                                            fill: "currentColor"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("use", {
+                                                            attrs: {
+                                                              "xlink:href":
+                                                                "/assets/icons/bootstrap-icons.svg#x-square"
+                                                            }
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        })
+                                      ],
+                                      2
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.active == 3
+                      ? _c("div", { key: 4 }, [
+                          _c("div", { staticClass: "container" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "my-3 col-12 col-sm-6 col-lg-4"
+                                },
+                                [
+                                  _c("h5", { staticClass: "text-primary" }, [
+                                    _vm._v(
+                                      "\n                                        Overview\n                                    "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Reason for requisition")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(_vm._s(_vm.reasonForRequisition))
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Order Type")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.ot) +
+                                          "\n                                        "
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [
+                                          _vm._v(
+                                            "\n                                                Visibility\n                                            "
+                                          )
+                                        ]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(
+                                            _vm.publicRFX ? "Public" : "Private"
+                                          ) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [
+                                          _vm._v(
+                                            "\n                                            Description\n                                        "
+                                          )
+                                        ]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(_vm.specification) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [
+                                          _vm._v(
+                                            "\n                                            Address\n                                        "
+                                          )
+                                        ]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(_vm.address) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [
+                                          _vm._v(
+                                            "\n                                                commodity\n                                            "
+                                          )
+                                        ]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.commodity) +
+                                          "\n                                        "
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [
+                                          _vm._v(
+                                            "\n                                                category\n                                            "
+                                          )
+                                        ]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.category) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "border-left border-primary my-3 col-12 col-sm-6 col-lg-4"
+                                },
+                                [
+                                  _c("h5", { staticClass: "text-primary" }, [
+                                    _vm._v(
+                                      "\n                                        Time rules\n                                    "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Start Date")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.start) +
+                                          "\n                                        "
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Start Time")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.startTime) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("End Date")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.end) +
+                                          "\n                                        "
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-6" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("End Time")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.endTime) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Estimated Award Date")]
+                                      ),
+                                      _c("br"),
+                                      _vm._v(
+                                        "\n                                        " +
+                                          _vm._s(_vm.award) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "border-left border-primary my-3 col-12 col-lg-4"
+                                },
+                                [
+                                  _c("h5", { staticClass: "text-primary" }, [
+                                    _vm._v(
+                                      "\n                                        Suppliers\n                                    "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._l(_vm.MPSuppliers, function(s, i) {
+                                    return _c(
+                                      "div",
+                                      {
+                                        key: s.id,
+                                        staticClass:
+                                          "row hover link-dark my-2 border-bottom py-3",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.selectSup(i)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("div", { staticClass: "col-3" }, [
+                                          _c("div", {
+                                            staticClass: "rounded shadow",
+                                            staticStyle: {
+                                              width: "55px",
+                                              height: "55px"
+                                            },
+                                            style:
+                                              "background:url(" +
+                                              s.profile +
+                                              ") center/cover no-repeat"
+                                          })
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "col-9 d-flex flex-column justify-content-center"
+                                          },
+                                          [
+                                            _c(
+                                              "span",
+                                              {
+                                                staticClass: "font-weight-bold"
+                                              },
+                                              [_vm._v(_vm._s(s.name))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticClass: "d-none d-sm-block"
+                                              },
+                                              [_vm._v(_vm._s(s.description))]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  })
+                                ],
+                                2
+                              )
+                            ])
+                          ])
+                        ])
                       : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "d-flex my-4" }, [
+                  _c("div", { staticClass: "d-flex my-5" }, [
                     _c(
                       "button",
                       {
@@ -1351,7 +2947,13 @@ var render = function() {
                         attrs: { type: "submit" },
                         on: { click: _vm.validate }
                       },
-                      [_vm._v("Next")]
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.active == 3 ? "Submit Order" : "Next") +
+                            "\n                    "
+                        )
+                      ]
                     )
                   ])
                 ],
