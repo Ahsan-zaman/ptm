@@ -41,7 +41,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
             }
         },
         mounted(){
-            // console.log('bootstrap', bootstrap)
+            console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])))
             EventBus.$on("Search", () => {
                 alert("search")
             })

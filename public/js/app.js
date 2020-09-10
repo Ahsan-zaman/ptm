@@ -2074,7 +2074,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    // console.log('bootstrap', bootstrap)
+    console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])));
     EventBus.$on("Search", function () {
       alert("search");
     });
@@ -21872,49 +21872,49 @@ __webpack_require__.r(__webpack_exports__);
     path: '/',
     name: 'Home',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/AppLogin.vue */ "./resources/js/components/AppLogin.vue"));
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../components/AppLogin.vue */ "./resources/js/components/AppLogin.vue"));
     }
   }, {
     path: '/dashboard',
     name: 'Dashboard',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../components/Dashboard.vue */ "./resources/js/components/Dashboard.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/Dashboard.vue */ "./resources/js/components/Dashboard.vue"));
     }
   }, {
     path: '/strategic-sourcing',
     name: 'Strategic Sourcing',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ../components/StrategicSourcing.vue */ "./resources/js/components/StrategicSourcing.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../components/StrategicSourcing.vue */ "./resources/js/components/StrategicSourcing.vue"));
     }
   }, {
     path: '/e-auction',
     name: 'eAuction',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ../components/EAuction.vue */ "./resources/js/components/EAuction.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ../components/EAuction.vue */ "./resources/js/components/EAuction.vue"));
     }
   }, {
     path: '/approval-center',
     name: 'ApprovalCenter',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../components/ApprovalCenter.vue */ "./resources/js/components/ApprovalCenter.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ../components/ApprovalCenter.vue */ "./resources/js/components/ApprovalCenter.vue"));
     }
   }, {
     path: '/invoice-management',
     name: 'InvoiceManagement',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ../components/InvoiceManagement.vue */ "./resources/js/components/InvoiceManagement.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/InvoiceManagement.vue */ "./resources/js/components/InvoiceManagement.vue"));
     }
   }, {
     path: '/supplier-management',
     name: 'SupplierManagement',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/SupplierManagement.vue */ "./resources/js/components/SupplierManagement.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ../components/SupplierManagement.vue */ "./resources/js/components/SupplierManagement.vue"));
     }
   }, {
     path: '/strategic-sourcing/new',
     name: 'newRFP',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(0), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ../components/NewsRFP.vue */ "./resources/js/components/NewsRFP.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../components/NewsRFP.vue */ "./resources/js/components/NewsRFP.vue"));
     }
   }]
 }));
