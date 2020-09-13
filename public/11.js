@@ -1,130 +1,20 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EAuction.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EAuction.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SideBar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideBar.vue */ "./resources/js/components/SideBar.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    SideBar: _SideBar_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      links: [{
-        name: 'Dashboard',
-        link: '/dashboard',
-        show: true,
-        icon: 'bar-chart-line'
-      }, {
-        name: 'Stratagic Sourcing',
-        link: '/strategic-sourcing',
-        show: true,
-        icon: 'file-check'
-      }, {
-        name: 'e-Auction',
-        link: '/e-auction',
-        show: true,
-        icon: 'tags'
-      }, {
-        name: 'Approval Center',
-        link: '/approval-center',
-        show: true,
-        icon: 'check-circle'
-      }, {
-        name: 'Invoice Management',
-        link: '/invoice-management',
-        show: true,
-        icon: 'file-spreadsheet'
-      }, {
-        name: 'Supplier Management',
-        link: '/supplier-management',
-        show: true,
-        icon: 'people'
-      }, {
-        name: 'Settings',
-        link: '/setting',
-        show: false,
-        icon: 'gear'
-      }]
-    };
-  },
-  beforeCreate: function beforeCreate() {
-    if (!UserClass.loggedIn()) {
-      this.$router.push('/');
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\ahsan\\Desktop\\PTM\\resources\\js\\components\\EAuction.vue: Unexpected token, expected \",\" (294:20)\n\n\u001b[0m \u001b[90m 292 | \u001b[39m                    \u001b[32m\"Maintenance and Refueling\"\u001b[39m\u001b[33m,\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 293 | \u001b[39m                    \u001b[32m\"Geographic Information System (GIS),\"\u001b[39m \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 294 | \u001b[39m                    \u001b[32m\"Geotechnical and Geological Services\"\u001b[39m\u001b[33m,\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 295 | \u001b[39m                    \u001b[32m\"Glass Supply\"\u001b[39m\u001b[33m,\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 296 | \u001b[39m                    \u001b[32m\"Maintenance and Glazing\"\u001b[39m\u001b[33m,\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 297 | \u001b[39m                    \u001b[32m\"Graphic Design and Branding\"\u001b[39m\u001b[33m,\u001b[39m \u001b[0m\n    at Parser._raise (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:766:17)\n    at Parser.raiseWithData (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:759:17)\n    at Parser.raise (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:753:17)\n    at Parser.unexpected (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:8966:16)\n    at Parser.expect (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:8952:28)\n    at Parser.parseExprList (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11008:14)\n    at Parser.parseArrayLike (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10899:26)\n    at Parser.parseExprAtom (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10187:23)\n    at Parser.parseExprSubscripts (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9844:23)\n    at Parser.parseUpdate (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9824:21)\n    at Parser.parseMaybeUnary (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9813:17)\n    at Parser.parseExprOps (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9683:23)\n    at Parser.parseMaybeConditional (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9657:23)\n    at Parser.parseMaybeAssign (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9620:21)\n    at C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9586:39\n    at Parser.allowInAnd (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11302:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9586:17)\n    at Parser.parseObjectProperty (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10815:101)\n    at Parser.parseObjPropValue (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10840:100)\n    at Parser.parsePropertyDefinition (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10771:10)\n    at Parser.parseObjectLike (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10664:25)\n    at Parser.parseExprAtom (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:10198:23)\n    at Parser.parseExprSubscripts (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9844:23)\n    at Parser.parseUpdate (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9824:21)\n    at Parser.parseMaybeUnary (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9813:17)\n    at Parser.parseExprOps (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9683:23)\n    at Parser.parseMaybeConditional (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9657:23)\n    at Parser.parseMaybeAssign (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9620:21)\n    at Parser.parseExpressionBase (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9564:23)\n    at C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9558:39\n    at Parser.allowInAnd (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11296:16)\n    at Parser.parseExpression (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:9558:17)\n    at Parser.parseReturnStatement (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11799:28)\n    at Parser.parseStatementContent (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11478:21)\n    at Parser.parseStatement (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:11430:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\ahsan\\Desktop\\PTM\\node_modules\\@babel\\parser\\lib\\index.js:12012:25)");
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EAuction.vue?vue&type=template&id=75750089&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EAuction.vue?vue&type=template&id=75750089& ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -132,162 +22,24 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row" },
-    [
-      _c("side-bar", { attrs: { links: _vm.links } }),
-      _vm._v(" "),
-      _c("main", { staticClass: "col-md-9 ml-sm-auto col-lg-10 px-md-4" }, [
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass:
-                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom"
-            },
-            [
-              _c("h1", { staticClass: "h2" }, [_vm._v("Stratagic Sourcing")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm btn-primary",
-                    attrs: { type: "button" }
-                  },
-                  [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bi",
-                        attrs: {
-                          width: "18",
-                          height: "18",
-                          fill: "currentColor"
-                        }
-                      },
-                      [
-                        _c("use", {
-                          attrs: {
-                            "xlink:href":
-                              "/assets/icons/bootstrap-icons.svg#plus"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v("\n                    New RFP\n                ")
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _vm._m(0)
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row align-items-start" }, [
-        _c("div", { staticClass: "col-12 col-md-6" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-4 p-2" }, [
-              _c("div", { staticClass: "bg-red rounded-lg shadow" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "d-block px-3 py-2",
-                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
-                  },
-                  [_vm._v("Sourcing")]
-                ),
-                _vm._v(" "),
-                _c("h3", { staticClass: "p-3" }, [
-                  _vm._v(
-                    "\n                                    1 project\n                                "
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-4 p-2" }, [
-              _c("div", { staticClass: "bg-yellow rounded-lg shadow" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "d-block px-3 py-2",
-                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
-                  },
-                  [_vm._v("Awarded")]
-                ),
-                _vm._v(" "),
-                _c("h3", { staticClass: "p-3" }, [
-                  _vm._v(
-                    "\n                                    0 Awarded\n                                "
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-4 p-2" }, [
-              _c("div", { staticClass: "bg-green rounded-lg shadow" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "d-block px-3 py-2",
-                    staticStyle: { "background-color": "rgba(0,0,0,.1)" }
-                  },
-                  [_vm._v("Completed")]
-                ),
-                _vm._v(" "),
-                _c("h3", { staticClass: "p-3" }, [
-                  _vm._v(
-                    "\n                                    0 Completed\n                                "
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-12 col-md-6 bg-primary" }, [
-          _vm._v(
-            "\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi sit eum, totam aliquid officiis id aut earum sed accusamus tempore, perspiciatis possimus iure molestiae culpa nisi. Enim eos placeat sint.\n                "
-          )
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/StrategicSourcing.vue":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/StrategicSourcing.vue ***!
-  \*******************************************************/
+/***/ "./resources/js/components/EAuction.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/EAuction.vue ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& */ "./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&");
-/* harmony import */ var _StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StrategicSourcing.vue?vue&type=script&lang=js& */ "./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&");
+/* harmony import */ var _EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EAuction.vue?vue&type=template&id=75750089& */ "./resources/js/components/EAuction.vue?vue&type=template&id=75750089&");
+/* harmony import */ var _EAuction_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EAuction.vue?vue&type=script&lang=js& */ "./resources/js/components/EAuction.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -297,9 +49,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _EAuction_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -309,38 +61,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/StrategicSourcing.vue"
+component.options.__file = "resources/js/components/EAuction.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&":
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************/
+/***/ "./resources/js/components/EAuction.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/EAuction.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./StrategicSourcing.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EAuction_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EAuction.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EAuction.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EAuction_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& ***!
-  \**************************************************************************************/
+/***/ "./resources/js/components/EAuction.vue?vue&type=template&id=75750089&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/EAuction.vue?vue&type=template&id=75750089& ***!
+  \*****************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./StrategicSourcing.vue?vue&type=template&id=7ffdf8bd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrategicSourcing.vue?vue&type=template&id=7ffdf8bd&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EAuction.vue?vue&type=template&id=75750089& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EAuction.vue?vue&type=template&id=75750089&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StrategicSourcing_vue_vue_type_template_id_7ffdf8bd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EAuction_vue_vue_type_template_id_75750089___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -74,6 +74,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
  // import Highcharts from 'highcharts'
 // import exportingInit from 'highcharts/modules/exporting'
@@ -277,90 +279,96 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row" },
-    [
-      _c("side-bar", { attrs: { links: _vm.links } }),
-      _vm._v(" "),
-      _c("main", { staticClass: "col-md-9 ml-sm-auto col-lg-10 px-md-4" }, [
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass:
-                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom"
-            },
-            [
-              _c("h1", { staticClass: "h2" }, [_vm._v("Stratagic Sourcing")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm btn-primary",
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push("/strategic-sourcing/new")
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bi",
-                        attrs: {
-                          width: "18",
-                          height: "18",
-                          fill: "currentColor"
-                        }
-                      },
-                      [
-                        _c("use", {
-                          attrs: {
-                            "xlink:href":
-                              "/assets/icons/bootstrap-icons.svg#plus"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v("\n                    New RFP\n                ")
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row align-items-start p-2" }, [
-              _c("div", { staticClass: "col-12 col-md-6" }, [
-                _vm._m(0),
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("side-bar", { attrs: { links: _vm.links } }),
+        _vm._v(" "),
+        _c("main", { staticClass: "col-md-9 ml-sm-auto col-lg-10 px-md-4" }, [
+          _c("div", [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom"
+              },
+              [
+                _c("h1", { staticClass: "h2" }, [_vm._v("Stratagic Sourcing")]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "my-2 shadow rounded" },
-                  [_c("highcharts", { attrs: { options: _vm.barChart } })],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-12 col-md-6" }, [
-                _c(
-                  "div",
-                  { staticClass: "p-2 rounded shadow" },
-                  [_c("highcharts", { attrs: { options: _vm.chartOptions } })],
-                  1
-                )
+                _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-primary",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.$router.push("/strategic-sourcing/new")
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "bi",
+                          attrs: {
+                            width: "18",
+                            height: "18",
+                            fill: "currentColor"
+                          }
+                        },
+                        [
+                          _c("use", {
+                            attrs: {
+                              "xlink:href":
+                                "/assets/icons/bootstrap-icons.svg#plus"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(
+                        "\n                        New RFP\n                    "
+                      )
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c("div", { staticClass: "row align-items-start p-2" }, [
+                _c("div", { staticClass: "col-12 col-md-6" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "my-2 shadow rounded" },
+                    [_c("highcharts", { attrs: { options: _vm.barChart } })],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 col-md-6" }, [
+                  _c(
+                    "div",
+                    { staticClass: "p-2 rounded shadow" },
+                    [
+                      _c("highcharts", { attrs: { options: _vm.chartOptions } })
+                    ],
+                    1
+                  )
+                ])
               ])
             ])
           ])
         ])
-      ])
-    ],
-    1
-  )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -379,9 +387,9 @@ var staticRenderFns = [
             [_vm._v("Sourcing")]
           ),
           _vm._v(" "),
-          _c("h3", { staticClass: "p-3" }, [
+          _c("h3", { staticClass: "p-3 text-center" }, [
             _vm._v(
-              "\n                                    1 project\n                                "
+              "\n                                        1 project\n                                    "
             )
           ])
         ])
@@ -398,9 +406,9 @@ var staticRenderFns = [
             [_vm._v("Awarded")]
           ),
           _vm._v(" "),
-          _c("h3", { staticClass: "p-3" }, [
+          _c("h3", { staticClass: "p-3 text-center" }, [
             _vm._v(
-              "\n                                    0 Awarded\n                                "
+              "\n                                        0 Awarded\n                                    "
             )
           ])
         ])
@@ -417,9 +425,9 @@ var staticRenderFns = [
             [_vm._v("Completed")]
           ),
           _vm._v(" "),
-          _c("h3", { staticClass: "p-3" }, [
+          _c("h3", { staticClass: "p-3 text-center" }, [
             _vm._v(
-              "\n                                    0 Completed\n                                "
+              "\n                                        0 Completed\n                                    "
             )
           ])
         ])

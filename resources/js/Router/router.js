@@ -18,6 +18,11 @@ export default new VueRouter({
             path:'/strategic-sourcing/new',
             name : 'newRFP',
             component: () => import("../components/NewsRFP.vue"),
+        },
+        {
+            path:'/register',
+            name : 'register',
+            component: () => import("../components/AppRegister.vue"),
         }
     ]
 })

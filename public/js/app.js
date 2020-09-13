@@ -2039,6 +2039,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2053,28 +2056,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isLoading: false,
       isLogged: UserClass.loggedIn(),
-      alerts: [// {
-        //     name : "Error",
-        //     type : 'danger',
-        //     desc : "Hello, world! This is a toast message. This is a toast message. This is a toast message.",
-        // },
-        // {
-        //     name : "Success",
-        //     type : 'success',
-        //     desc : "Hello, world! This is a toast message. This is a toast message.",
-        // },
-        // {
-        //     name : "Primary",
-        //     type : 'primary',
-        //     desc : "Hello, world! This is a toast message.",
-        // }
-      ]
+      alerts: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])));
+    // console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])))
     EventBus.$on("Search", function () {
       alert("search");
     });
@@ -2098,8 +2086,8 @@ __webpack_require__.r(__webpack_exports__);
     axios.interceptors.request.use(function (config) {
       // spinning start to show
       // UPDATE: Add this code to show global loading indicator
-      EventBus.$emit("loading");
-      var token = window.localStorage.token;
+      EventBus.$emit("loading"); // const token = window.localStorage.token;
+
       return config;
     }, function (error) {
       return Promise.reject(error);
@@ -2110,6 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
       EventBus.$emit("loadingDone");
       return response;
     }, function (error) {
+      EventBus.$emit("loadingDone");
       return Promise.reject(error);
     });
   }
@@ -6213,12 +6202,23 @@ var render = function() {
       _vm._v(" "),
       _c("Loader", { attrs: { isLoading: _vm.isLoading } }),
       _vm._v(" "),
-      _c("alert", { attrs: { alerts: _vm.alerts } })
+      _c("alert", { attrs: { alerts: _vm.alerts } }),
+      _vm._v(" "),
+      _vm._m(0)
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "text-center" }, [
+      _c("small", [_vm._v("@ 2020 All rights reserved")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -21915,6 +21915,12 @@ __webpack_require__.r(__webpack_exports__);
     name: 'newRFP',
     component: function component() {
       return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../components/NewsRFP.vue */ "./resources/js/components/NewsRFP.vue"));
+    }
+  }, {
+    path: '/register',
+    name: 'register',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../components/AppRegister.vue */ "./resources/js/components/AppRegister.vue"));
     }
   }]
 }));

@@ -6,6 +6,9 @@
         </div>
         <Loader :isLoading="isLoading"/>
         <alert :alerts="alerts"/>
+        <footer class="text-center">
+            <small>@ 2020 All rights reserved</small>
+        </footer>
     </div>
 </template>
 
@@ -22,26 +25,11 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
                 isLogged : UserClass.loggedIn(),
                 
                 alerts : [
-                    // {
-                    //     name : "Error",
-                    //     type : 'danger',
-                    //     desc : "Hello, world! This is a toast message. This is a toast message. This is a toast message.",
-                    // },
-                    // {
-                    //     name : "Success",
-                    //     type : 'success',
-                    //     desc : "Hello, world! This is a toast message. This is a toast message.",
-                    // },
-                    // {
-                    //     name : "Primary",
-                    //     type : 'primary',
-                    //     desc : "Hello, world! This is a toast message.",
-                    // }
                 ]
             }
         },
         mounted(){
-            console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])))
+            // console.log('bootstrap', JSON.parse(atob(UserClass.getToken().split('.')[1])))
             EventBus.$on("Search", () => {
                 alert("search")
             })
@@ -66,7 +54,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
                 // UPDATE: Add this code to show global loading indicator
                 EventBus.$emit("loading")
 
-                const token = window.localStorage.token;
+                // const token = window.localStorage.token;
 
                 return config
             }, function (error) {
@@ -80,6 +68,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
 
                 return response;
             }, function (error) {
+                EventBus.$emit("loadingDone")
                 return Promise.reject(error);
             });
 

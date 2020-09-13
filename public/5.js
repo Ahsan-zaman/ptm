@@ -52,6 +52,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -63,21 +75,34 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    login: function login() {
+    login: function login(e) {
       var _this = this;
 
-      axios.post("/login", {
-        password: this.password,
-        email: this.email,
-        remember_me: this.rememberMe
-      }).then(function (res) {
-        console.log(res.data);
-        UserClass.storeToken(res.data);
+      e.preventDefault();
 
-        _this.$router.push('/dashboard');
-      })["catch"](function (err) {
-        return alert(err);
-      });
+      if (!this.$refs.form.checkValidity()) {
+        this.$refs.form.classList.add('was-validated');
+      } else {
+        axios.post("/login", {
+          password: this.password,
+          email: this.email,
+          remember_me: this.rememberMe
+        }).then(function (res) {
+          // console.log(res.data)
+          axios.defaults.headers.common["Authorization"] = "Bearer ".concat(res.data.access_token);
+          UserClass.storeToken(res.data);
+
+          _this.$router.push('/dashboard');
+        })["catch"](function (err) {
+          EventBus.$emit('alert', {
+            name: "Login error",
+            type: 'danger',
+            desc: err.message,
+            id: Math.random(10000),
+            time: 5000
+          });
+        });
+      }
     }
   },
   beforeCreate: function beforeCreate() {
@@ -127,232 +152,283 @@ var render = function() {
         [
           _vm._m(0),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "Email" } },
-                [_vm._v("Email")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.email,
-                    expression: "email"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", id: "Email", placeholder: "Jhon Doe" },
-                domProps: { value: _vm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.email = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "Password" } },
-                [_vm._v("Password")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "input-group" }, [
-                (_vm.showPass ? "text" : "password") === "checkbox"
-                  ? _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.password,
-                          expression: "password"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "Password",
-                        placeholder: "Another input placeholder",
-                        type: "checkbox"
-                      },
-                      domProps: {
-                        checked: Array.isArray(_vm.password)
-                          ? _vm._i(_vm.password, null) > -1
-                          : _vm.password
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.password,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = null,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.password = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.password = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.password = $$c
-                          }
-                        }
-                      }
-                    })
-                  : (_vm.showPass ? "text" : "password") === "radio"
-                  ? _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.password,
-                          expression: "password"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "Password",
-                        placeholder: "Another input placeholder",
-                        type: "radio"
-                      },
-                      domProps: { checked: _vm._q(_vm.password, null) },
-                      on: {
-                        change: function($event) {
-                          _vm.password = null
-                        }
-                      }
-                    })
-                  : _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.password,
-                          expression: "password"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        id: "Password",
-                        placeholder: "Another input placeholder",
-                        type: _vm.showPass ? "text" : "password"
-                      },
-                      domProps: { value: _vm.password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.password = $event.target.value
-                        }
-                      }
-                    }),
-                _vm._v(" "),
+          _c(
+            "form",
+            {
+              ref: "form",
+              staticClass: "card-body needs-validation",
+              attrs: { novalidate: "" }
+            },
+            [
+              _c("div", { staticClass: "mb-3" }, [
                 _c(
-                  "span",
-                  {
-                    staticClass: "input-group-text hover",
-                    on: {
-                      click: function($event) {
-                        _vm.showPass = !_vm.showPass
-                      }
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "email" } },
+                  [_vm._v("Email")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email"
                     }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "email",
+                    id: "email",
+                    placeholder: "you@example.com",
+                    required: ""
                   },
-                  [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bi",
-                        attrs: {
-                          width: "20",
-                          height: "20",
-                          fill: "currentColor"
-                        }
-                      },
-                      [
-                        _c("use", {
-                          attrs: {
-                            "xlink:href":
-                              "/assets/icons/bootstrap-icons.svg#" +
-                              (_vm.showPass ? "eye-slash" : "eye")
-                          }
-                        })
-                      ]
-                    )
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-block btn-primary mb-3",
-                on: { click: _vm.login }
-              },
-              [_vm._v("Login")]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c("label", { attrs: { for: "gridCheck" } }, [
-                _vm._v("\n                    Remember me\n                ")
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "valid-feedback" }, [
+                  _vm._v("\n                    Looks good!\n                ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                    Please type in your email\n                "
+                  )
+                ])
               ]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.rememberMe,
-                    expression: "rememberMe"
-                  }
-                ],
-                attrs: { type: "checkbox", id: "gridCheck" },
-                domProps: {
-                  checked: Array.isArray(_vm.rememberMe)
-                    ? _vm._i(_vm.rememberMe, null) > -1
-                    : _vm.rememberMe
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.rememberMe,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.rememberMe = $$a.concat([$$v]))
-                      } else {
-                        $$i > -1 &&
-                          (_vm.rememberMe = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "password" } },
+                  [_vm._v("Password")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group" }, [
+                  (_vm.showPass ? "text" : "password") === "checkbox"
+                    ? _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "Password",
+                          placeholder: "********",
+                          type: "checkbox"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.password)
+                            ? _vm._i(_vm.password, null) > -1
+                            : _vm.password
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.password,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.password = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.password = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.password = $$c
+                            }
+                          }
+                        }
+                      })
+                    : (_vm.showPass ? "text" : "password") === "radio"
+                    ? _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "Password",
+                          placeholder: "********",
+                          type: "radio"
+                        },
+                        domProps: { checked: _vm._q(_vm.password, null) },
+                        on: {
+                          change: function($event) {
+                            _vm.password = null
+                          }
+                        }
+                      })
+                    : _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.password,
+                            expression: "password"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "Password",
+                          placeholder: "********",
+                          type: _vm.showPass ? "text" : "password"
+                        },
+                        domProps: { value: _vm.password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.password = $event.target.value
+                          }
+                        }
+                      }),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "input-group-text hover",
+                      on: {
+                        click: function($event) {
+                          _vm.showPass = !_vm.showPass
+                        }
                       }
-                    } else {
-                      _vm.rememberMe = $$c
+                    },
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "bi",
+                          attrs: {
+                            width: "20",
+                            height: "20",
+                            fill: "currentColor"
+                          }
+                        },
+                        [
+                          _c("use", {
+                            attrs: {
+                              "xlink:href":
+                                "/assets/icons/bootstrap-icons.svg#" +
+                                (_vm.showPass ? "eye-slash" : "eye")
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "valid-feedback" }, [
+                  _vm._v("\n                    Looks good!\n                ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                    Enter your password\n                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-block btn-primary mb-3",
+                  on: { click: _vm.login }
+                },
+                [_vm._v("Login")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c("label", { attrs: { for: "gridCheck" } }, [
+                  _vm._v("\n                    Remember me\n                ")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.rememberMe,
+                      expression: "rememberMe"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "gridCheck" },
+                  domProps: {
+                    checked: Array.isArray(_vm.rememberMe)
+                      ? _vm._i(_vm.rememberMe, null) > -1
+                      : _vm.rememberMe
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.rememberMe,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.rememberMe = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.rememberMe = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
+                      } else {
+                        _vm.rememberMe = $$c
+                      }
                     }
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _vm._m(1)
-          ])
+                })
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ]
       ),
       _vm._v(" "),
-      _vm._m(2)
+      _c(
+        "div",
+        { attrs: { align: "center" } },
+        [
+          _c("span", { staticClass: "mx-3 text-light" }, [
+            _vm._v("Not a customer?")
+          ]),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-outline-light",
+              attrs: { to: "/register" }
+            },
+            [_vm._v("Try for free")]
+          )
+        ],
+        1
+      )
     ]
   )
 }
@@ -374,20 +450,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("a", { staticClass: "ml-auto", attrs: { href: "#" } }, [
         _vm._v("Use custom domain")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { align: "center" } }, [
-      _c("span", { staticClass: "mx-3 link-light" }, [
-        _vm._v("Not a customer?")
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-light" }, [
-        _vm._v("Try for free")
       ])
     ])
   }
