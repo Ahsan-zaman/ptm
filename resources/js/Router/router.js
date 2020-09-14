@@ -11,6 +11,7 @@ export default new VueRouter({
             component: () => import("../components/StrategicSourcing.vue"),
         },
         {path:'/e-auction',name : 'eAuction',component: () => import("../components/EAuction.vue")},
+        {path:'/e-auction/:id',name : 'eAuction',component: () => import("../components/TenderView.vue")},
         {path:'/approval-center',name : 'ApprovalCenter',component: () => import("../components/ApprovalCenter.vue")},
         {path:'/invoice-management',name : 'InvoiceManagement',component: () => import("../components/InvoiceManagement.vue")},
         {path:'/supplier-management',name : 'SupplierManagement',component: () => import("../components/SupplierManagement.vue")},

@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                         <label for="cr" class="form-label">Business Registration Number</label>
-                        <input type="number" class="form-control" v-model="cr" id="cr" required>
+                        <input type="text" class="form-control" v-model="cr" id="cr" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                         <label for="vat_number" class="form-label">Tax number</label>
-                        <input type="number" class="form-control" v-model="vat_number" id="vat_number" required>
+                        <input type="text" class="form-control" v-model="vat_number" id="vat_number" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -132,7 +132,7 @@
                         <div class="col-12 col-md-6 mb-3">
                             <label for="password" class="form-label">Password</label>
                             <div class="input-group">
-                                <input v-model="password" minlength="8" :type="showPass ? 'text' : 'password'" class="form-control" id="Password">
+                                <input v-model="password" required :type="showPass ? 'text' : 'password'" class="form-control" id="Password">
                                 <span @click="showPass = !showPass" class="input-group-text hover">
                                     <svg class="bi" width="20" height="20" fill="currentColor">
                                         <use :xlink:href="`/assets/icons/bootstrap-icons.svg#${showPass ? 'eye-slash' : 'eye'}`"/>
@@ -183,9 +183,19 @@
                 showPass2: false,
                 showPass: false,
                 password:"",
-                rememberMe:false,
                 logged : UserClass.loggedIn(),
-                showPass:false
+                company_name : "",
+                company_name_native : "",
+                cr : "",
+                vat_number : "",
+                name : "",
+                email : "",
+                mobile : "",
+                office_phone : "",
+                office_address : "",
+                acc_type : "",
+                password : "",
+                password_confirmation : "",
             }
         },
         methods:{
@@ -195,24 +205,47 @@
                     this.$refs.form.classList.add('was-validated')
                 }else{
 
-                    axios.post("/login",{
-                        password : this.password,
+                    let data = {
+                        company_name : this.company_name,
+                        company_name_native : this.company_name_native,
+                        cr : this.cr,
+                        vat_number : this.vat_number,
+                        name : this.name,
                         email : this.email,
-                        remember_me : this.rememberMe
-                    })
+                        mobile : this.mobile,
+                        office_phone : this.office_phone,
+                        office_address : this.office_address,
+                        acc_type : this.acc_type,
+                        password : this.password,
+                        password_confirmation : this.password_confirmation,
+                    }
+                    // console.log(data)
+
+                    axios.post("/signup",data)
                     .then(res => {
-                        // console.log(res.data)
-                        axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.access_token}`;
-                        UserClass.storeToken(res.data)
-                        this.$router.push('/dashboard')
+                        EventBus.$emit('alert',{
+                            name : "Registration",
+                            type : 'success',
+                            desc : res.data.message,
+                            id : Math.random(10000),
+                            time : 7000
+                        })
+                        this.$router.push('/login')
                     })
                     .catch(err => {
-                        EventBus.$emit('alert',{
-                            name : "Login error",
-                            type : 'danger',
-                            desc : err.message,
-                            id : Math.random(10000),
-                            time : 5000
+                        // console.log(err.response)
+                        Object.entries(err.response.data.errors).forEach(error => {
+                            err.response.data.errors[error[0]].forEach(e => {
+                                setTimeout(() => {
+                                    EventBus.$emit('alert',{
+                                        name : err.message,
+                                        type : 'danger',
+                                        desc : e,
+                                        id : Math.random(10000),
+                                        time : 5000
+                                    })
+                                },200)
+                            })
                         })
                     })
                 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,18 +13,38 @@ class AuthController extends Controller
     public function signup(Request $request)
     {
         $request->validate([
+            'company_name' => 'required|string',
+            'company_name_native' => 'required|string',
+            'cr' => 'required|string',
+            'vat_number' => 'required|string',
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed'
+            'mobile' => 'required|string|min:10',
+            'office_phone' => 'required|string|min:7',
+            'office_address' => 'required|string',
+            'password' => 'required|string|min:8|confirmed'
         ]);
         $user = new User([
             'name' => $request->name,
             'email' => $request->email,
+            'mobile_no' => $request->mobile,
+            'acc_type' => $request->acc_type,
             'password' => bcrypt($request->password)
         ]);
         $user->save();
+
+        $company = new Company([
+            'company_name' => $request->company_name,
+            'company_name_native' => $request->company_name_native,
+            'cr' => $request->cr,
+            'vat' => $request->vat_number,
+            'poc' => $user->id,
+            'office_phone' => $request->office_phone,
+            'office_address' => $request->office_address,
+        ]);
+        $company->save();
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => "Registration successfull."
         ], 201);
     }
 

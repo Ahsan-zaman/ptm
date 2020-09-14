@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('mobile_no');
+            $table->string('acc_type', 32);
         });
 
         DB::update("ALTER TABLE users AUTO_INCREMENT = 100000;");

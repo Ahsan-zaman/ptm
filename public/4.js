@@ -381,16 +381,17 @@ var staticRenderFns = [
           _c(
             "span",
             {
-              staticClass: "d-block px-3 py-2",
+              staticClass: "d-block text-center py-2",
               staticStyle: { "background-color": "rgba(0,0,0,.1)" }
             },
             [_vm._v("Sourcing")]
           ),
           _vm._v(" "),
           _c("h3", { staticClass: "p-3 text-center" }, [
-            _vm._v(
-              "\n                                        1 project\n                                    "
-            )
+            _vm._v("\n                                        1 "),
+            _c("span", { staticClass: "d-none d-sm-block" }, [
+              _vm._v("Project")
+            ])
           ])
         ])
       ]),
@@ -400,16 +401,17 @@ var staticRenderFns = [
           _c(
             "span",
             {
-              staticClass: "d-block px-3 py-2",
+              staticClass: "d-block text-center py-2",
               staticStyle: { "background-color": "rgba(0,0,0,.1)" }
             },
             [_vm._v("Awarded")]
           ),
           _vm._v(" "),
           _c("h3", { staticClass: "p-3 text-center" }, [
-            _vm._v(
-              "\n                                        0 Awarded\n                                    "
-            )
+            _vm._v("\n                                        0 "),
+            _c("span", { staticClass: "d-none d-sm-block" }, [
+              _vm._v("Awarded")
+            ])
           ])
         ])
       ]),
@@ -419,16 +421,17 @@ var staticRenderFns = [
           _c(
             "span",
             {
-              staticClass: "d-block px-3 py-2",
+              staticClass: "d-block text-center py-2",
               staticStyle: { "background-color": "rgba(0,0,0,.1)" }
             },
             [_vm._v("Completed")]
           ),
           _vm._v(" "),
           _c("h3", { staticClass: "p-3 text-center" }, [
-            _vm._v(
-              "\n                                        0 Completed\n                                    "
-            )
+            _vm._v("\n                                        0 "),
+            _c("span", { staticClass: "d-none d-sm-block" }, [
+              _vm._v("Completed")
+            ])
           ])
         ])
       ])

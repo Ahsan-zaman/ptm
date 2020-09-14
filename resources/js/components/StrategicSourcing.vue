@@ -22,25 +22,25 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="bg-red rounded-lg shadow">
-                                        <span class="d-block px-3 py-2" style="background-color:rgba(0,0,0,.1)">Sourcing</span>
+                                        <span class="d-block text-center py-2" style="background-color:rgba(0,0,0,.1)">Sourcing</span>
                                         <h3 class="p-3 text-center">
-                                            1 project
+                                            1 <span class="d-none d-sm-block">Project</span>
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="bg-yellow rounded-lg shadow">
-                                        <span class="d-block px-3 py-2" style="background-color:rgba(0,0,0,.1)">Awarded</span>
+                                        <span class="d-block text-center py-2" style="background-color:rgba(0,0,0,.1)">Awarded</span>
                                         <h3 class="p-3 text-center">
-                                            0 Awarded
+                                            0 <span class="d-none d-sm-block">Awarded</span>
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="bg-green rounded-lg shadow">
-                                        <span class="d-block px-3 py-2" style="background-color:rgba(0,0,0,.1)">Completed</span>
+                                        <span class="d-block text-center py-2" style="background-color:rgba(0,0,0,.1)">Completed</span>
                                         <h3 class="p-3 text-center">
-                                            0 Completed
+                                            0 <span class="d-none d-sm-block">Completed</span>
                                         </h3>
                                     </div>
                                 </div>

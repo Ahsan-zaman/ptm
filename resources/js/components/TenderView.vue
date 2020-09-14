@@ -1,134 +1,83 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-        <side-bar :links="links" />
-        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
-                <h1 class="h2">Public Tenders</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group mr-2">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                </div>
-                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                    <span data-feather="calendar"></span>
-                    This week
-                </button>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="d-none d-lg-block col-12 col-md-4 col-lg-3">
-                    <div class="d-flex p-2 mb-2 align-items-center bg-primary text-white rounded">
-                        <h4 class="mb-0">Search Tenders</h4>
-                        <svg style="transform:translateX(-1)" class="bi ml-auto" width="24" height="24" fill="currentColor">
-                            <use xlink:href="/assets/icons/bootstrap-icons.svg#search"/>
-                        </svg>
+            <side-bar :links="links" />
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
+                    <h1 class="h2">Public Tenders</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                     </div>
-                    <div class="mb-2">
-                        <label for="tender_name" class="form-label">Tender name</label>
-                        <input type="text" class="form-control" v-model="tender_name" id="tender_name">
-                    </div>
-                    <div class="mb-2">
-                        <label for="tender_id" class="form-label">Tender number</label>
-                        <input type="text" class="form-control" v-model="tender_id" id="tender_id">
-                    </div>
-                    <div class="mb-2">
-                        <label for="date_from" class="form-label">Start date</label>
-                        <input type="date" class="form-control" v-model="date_from" id="date_from">
-                    </div>
-                    <div class="mb-2">
-                        <label for="date_to" class="form-label">To date</label>
-                        <input type="date" class="form-control" v-model="date_to" id="date_to">
-                    </div>
-                    <div class="mb-2">
-                        <label for="category" class="form-label">Category</label>
-                        <input class="form-control" list="catList" id="category" v-model="category">
-                        <datalist id="catList">
-                            <option v-for="(c,i) in categories" :key="i" :value="c" >{{c}}</option>
-                        </datalist>
-                    </div>
-                    <div class="mb-2">
-                        <label for="location" class="form-label">City/Region</label>
-                        <input class="form-control" list="subList" id="location" v-model="location">
-                        <datalist id="subList">
-                            <option v-for="(c,i) in locations" :key="i" :value="c" >{{c}}</option>
-                        </datalist>
-                    </div>
-                    <div class="mb-2">
-                        <label for="price_range" class="form-label">Price range</label>
-                        <input class="form-control" list="datalistOptions" id="price_range" v-model="price_range">
-                        <datalist id="datalistOptions">
-                            <option v-for="(c,i) in price_ranges" :key="i" :value="c" >{{c}}</option>
-                        </datalist>
-                    </div>
-                    <div class="mb-2">
-                        <span class="btn btn-primary float-right">Search</span>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
                     </div>
                 </div>
-                <div class="col-12 col-lg-9">
-                    <div v-for="(tender,i) in tenders" :key="i" class="border shadow-sm rounded p-1 my-2">
-                        <div class="row g-0 border-bottom">
-                            <div class="col-12 col-md-9 d-flex align-items-center p-2">
-                                <div class="row">
-                                    <div class="col-4 col-md-3">
-                                        <div class="mx-auto" :style="`background:url('${tender.company_logo}') center/cover no-repeat`" style="width:90px;height:90px"></div>
-                                    </div>
-                                    <router-link :to="`/e-auction/${tender.tender_no}`" class="col-8 col-md-9 text-decoration-none">
-                                        <h3 class="link-primary">{{tender.tender_name}}</h3>
-                                        <span class="font-weight-bold">{{tender.company_name}}</span>
-                                    </router-link>
-                                </div>
+                <div class="container">
+                    <div class="row g-0 mt-3">
+                        <!-- {{$route.params.id}} -->
+                        <div class="col-12 col-sm-8 col-lg-9 border-top border-left">
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Tender name</div>
+                                <div class="py-2 col-8">تجهيز وإنشاء وحدات سكنية بحي الخليج</div>
                             </div>
-                            <div class="col-12 col-md-3 border-left">
-                                <div class="row g-0">
-                                    <div class="col-6 col-md-12 text-center text-md-left lh-sm p-2">Tender Number <br> {{tender.tender_no}}</div>
-                                    <div class="col-6 col-md-12 text-center text-md-left lh-sm p-2">Price <br>{{tender.tender_price}}</div>
-                                </div>
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Tender number</div>
+                                <div class="py-2 col-8">{{$route.params.id}}</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Tender type</div>
+                                <div class="py-2 col-8">Public</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Government Agency</div>
+                                <div class="py-2 col-8">تجهيز وإنشاء وحدات سكنية بحي الخليج</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Tender purpose</div>
+                                <div class="py-2 col-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsam molestias ab placeat veniam facilis perspiciatis expedita in ad eius dignissimos impedit, quia iste veritatis ipsa nostrum hic debitis excepturi.</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="py-2 col-4 bg-white">Price</div>
+                                <div class="py-2 col-8">14,000 SAR</div>
                             </div>
                         </div>
-                        <div class="row g-0">
-                            <div class="col-12 col-md-9 d-flex align-items-center">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <p class="text-primary font-weight-bold px-2 pb-1 mb-0">Online publish date</p>
-                                        <p class="px-2 pb-1 mb-0">
-                                            <svg class="bi mb-1" width="14" height="14" fill="currentColor">
-                                                <use xlink:href="/assets/icons/bootstrap-icons.svg#calendar3"/>
-                                            </svg>
-                                            {{tender.published_at}}</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p class="text-primary font-weight-bold px-2 pb-1 mb-0">Closing date</p>
-                                        <p class="px-2 pb-1 mb-0">
-                                            <svg class="bi mb-1" width="14" height="14" fill="currentColor">
-                                                <use xlink:href="/assets/icons/bootstrap-icons.svg#calendar3"/>
-                                            </svg>
-                                            {{tender.close_at}}</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p class="text-primary font-weight-bold px-2 pb-1 mb-0">Bid Opening Date and Time</p>
-                                        <p class="px-2 pb-1 mb-0">
-                                            <svg class="bi mb-1" width="14" height="14" fill="currentColor">
-                                                <use xlink:href="/assets/icons/bootstrap-icons.svg#calendar3"/>
-                                            </svg>
-                                            {{tender.open_at}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-3 d-flex flex-column align-items-center justify-content-center border-left p-2">
+                        <div style="min-height:150px" class="col-12 col-sm-4 col-lg-3 border d-flex flex-column">
+                            <div style="flex-grow:1" class="mx-auto w-100" :style="`background:url('/assets/3.jpg') center/contain no-repeat`"></div>
+                            <div class="d-flex flex-column align-items-center justify-content-center p-2 mb-2">
                                 <span class="text-success">
-                                    {{tender.days_remaining}}
+                                    13 Day - 16 Hour
                                 </span>
                                 <div class="progress w-100" style=" height:.5rem;">
                                     <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tender dates</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Addresses</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Public file(s)</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-    </div>
+            </main>
+        </div>
     </div>
 </template>
 
@@ -152,7 +101,7 @@ import SideBar from './SideBar.vue'
                         icon: 'file-check'
                     },
                     {
-                        name : 'e-Auction',
+                        name : 'Tenders',
                         link: '/e-auction',
                         show: true,
                         icon: 'tags'

@@ -21890,25 +21890,31 @@ __webpack_require__.r(__webpack_exports__);
     path: '/e-auction',
     name: 'eAuction',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ../components/EAuction.vue */ "./resources/js/components/EAuction.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/EAuction.vue */ "./resources/js/components/EAuction.vue"));
+    }
+  }, {
+    path: '/e-auction/:id',
+    name: 'eAuction',
+    component: function component() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ../components/TenderView.vue */ "./resources/js/components/TenderView.vue"));
     }
   }, {
     path: '/approval-center',
     name: 'ApprovalCenter',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ../components/ApprovalCenter.vue */ "./resources/js/components/ApprovalCenter.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ../components/ApprovalCenter.vue */ "./resources/js/components/ApprovalCenter.vue"));
     }
   }, {
     path: '/invoice-management',
     name: 'InvoiceManagement',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/InvoiceManagement.vue */ "./resources/js/components/InvoiceManagement.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ../components/InvoiceManagement.vue */ "./resources/js/components/InvoiceManagement.vue"));
     }
   }, {
     path: '/supplier-management',
     name: 'SupplierManagement',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ../components/SupplierManagement.vue */ "./resources/js/components/SupplierManagement.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ../components/SupplierManagement.vue */ "./resources/js/components/SupplierManagement.vue"));
     }
   }, {
     path: '/strategic-sourcing/new',
@@ -21920,7 +21926,7 @@ __webpack_require__.r(__webpack_exports__);
     path: '/register',
     name: 'register',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../components/AppRegister.vue */ "./resources/js/components/AppRegister.vue"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../components/AppRegister.vue */ "./resources/js/components/AppRegister.vue"));
     }
   }]
 }));
