@@ -19,8 +19,10 @@ class CreateProjectsTable extends Migration
 
             $table->string('project_name');
             $table->string('project_category');
-            $table->integer('price');
-            $table->text('summary');
+            $table->string('project_status', 64);
+            $table->integer('project_price');
+            $table->text('project_summary');
+            $table->text('suppliers')->nullable();
             $table->text('boq');
             $table->string('district', 64);
             $table->string('city', 64);

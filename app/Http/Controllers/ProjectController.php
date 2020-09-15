@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InvitedSupplier;
 use App\Models\Project;
 use DateTime;
 use Illuminate\Http\Request;
@@ -43,26 +44,14 @@ class ProjectController extends Controller
             'start_time' => 'required|date_format:H:i',
             'rfi_last_date' => 'required|date_format:Y-m-d',
             'publicRFX' => 'boolean',
+            'suppliers' => 'array',
+            'invite' => 'array',
         ]);
         $start_d = new DateTime($request->start. ' ' . $request->start_time);
         $start = $start_d->format('Y-m-d H:i:s');
         $end_d = new DateTime($request->end. ' ' . $request->end_time);
         $end = $end_d->format('Y-m-d H:i:s');
-        // $project = new Project([
-        //     'project_name' => $request->project_name,
-        //     'project_category' => $request->project_category,
-        //     'project_price' => $request->project_price,
-        //     'project_summary' => $request->project_summary,
-        //     'boq' => $request->boq,
-        //     'district' => $request->district,
-        //     'city' => $request->city,
-        //     'country' => $request->country,
-        //     'start_date' => $start,
-        //     'end_date' => $end,
-        //     'rfi_last_date' => $request->rfi_last_date,
-        //     'publicRFX' => $request->publicRFX,
-        // ]);
-        return response([
+        $project = new Project([
             'project_name' => $request->project_name,
             'project_category' => $request->project_category,
             'project_price' => $request->project_price,
@@ -73,11 +62,27 @@ class ProjectController extends Controller
             'country' => $request->country,
             'start_date' => $start,
             'end_date' => $end,
+            'project_status' => $request->project_status,
             'rfi_last_date' => $request->rfi_last_date,
-            'publicRFX' => $request->publicRFX,
+            'public' => $request->publicRFX,
+            'suppliers' => implode(",", $request->suppliers),
             'company_id' => auth()->user()->company_id,
             'created_by' => auth()->user()->id
-        ], 200);
+        ]);
+        $project->save();
+        foreach ($request->invite as $inv) {
+            if (isset($inv['name']) && isset($inv['email'])) {
+                $invited = new InvitedSupplier([
+                    'email' => $inv['email'],
+                    'name' => $inv['name'],
+                    'project_id' => $project->id
+                ]);
+                $invited->save();
+            }
+        }
+        return response(['message' => "New project created successfully"], 200);
+
+        // return response($request->invite[0]['name'], 200);
     }
 
     /**

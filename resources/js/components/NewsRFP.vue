@@ -386,13 +386,13 @@
                                         <h5 class="text-primary">
                                             Suppliers
                                         </h5>
-                                        <div v-for="(s,i) in MPSuppliers" :key="s.id" @click="selectSup(i)" class="row hover link-dark my-2 border-bottom py-3">
+                                        <div v-for="(s,i) in summarySuppliers" :key="s.id" @click="selectSup(i)" class="row hover link-dark my-2 border-bottom py-3">
                                             <div class="col-3">
-                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/contain no-repeat`" style="width:55px;height:55px"></div>
+                                                <div class="rounded shadow" :style="`background:url(${s.profile || `https://ui-avatars.com/api/?name=${s.name}`}) center/contain no-repeat`" style="width:55px;height:55px"></div>
                                             </div>
                                             <div class="col-9 d-flex flex-column justify-content-center">
                                                 <span class="font-weight-bold">{{s.name}}</span>
-                                                <span class="d-none d-sm-block">{{s.description}}</span>
+                                                <span class="d-none d-sm-block">{{s.description || s.email}}</span>
                                             </div>
                                         </div>
 
@@ -412,17 +412,14 @@
             </div>
 
         </main>
-        <alert/>
     </div>
     </div>
 </template>
 
 <script>
 import SideBar from './SideBar.vue'
-import Alert from './Alert'
-import { each } from 'highcharts'
     export default {
-        components:{ SideBar, Alert },
+        components:{ SideBar },
         data(){
             return{
                 tabs : [
@@ -788,6 +785,7 @@ import { each } from 'highcharts'
                 supName : "",
                 supEmail : "",
                 inviteSuppliers : [],
+                summarySuppliers : []
 
             }
         },
@@ -821,15 +819,16 @@ import { each } from 'highcharts'
                     }
                 }
                 else if(this.active == 2){
-                    var sMySup = this.mySuppliers.filter(s => s.checked).length
-                    var sMPSup = this.MPSuppliers.filter(s => s.checked).length
-                    var sInviteSup = this.inviteSuppliers.length
+                    var sMySup = this.mySuppliers.filter(s => s.checked)
+                    var sMPSup = this.MPSuppliers.filter(s => s.checked)
+                    var sInviteSup = this.inviteSuppliers
                     
-                    if( sMySup || sMPSup || sInviteSup){
+                    if( sMySup.length || sMPSup.length || sInviteSup.length){
                         // Go to summary 
                         if(this.active < this.tabs.length -1){
                             this.active = this.active + 1
                         }
+                        this.summarySuppliers = [...sMySup,...sMPSup,...sInviteSup]
                     }else{
                         EventBus.$emit('alert',{
                             name : "Supplier outage",
@@ -839,6 +838,61 @@ import { each } from 'highcharts'
                             time : 5000
                         })
                     }
+                }
+                else{
+                    let data = {
+                        project_name : this.project_name,
+                        project_category : this.project_category,
+                        project_price : this.project_price,
+                        project_summary : this.project_summary,
+                        boq : this.boq,
+                        district : this.district,
+                        city : this.city,
+                        country : this.country,
+                        start : this.start,
+                        end : this.end,
+                        start_time : this.startTime,
+                        end_time : this.endTime,
+                        rfi_last_date : this.award,
+                        publicRFX : this.publicRFX ? 1 : 0,
+                        suppliers : [...this.mySuppliers.filter(s => s.checked).map(s => s.id),...this.MPSuppliers.filter(s => s.checked).map(s => s.id)],
+                        invite : this.inviteSuppliers,
+
+                        // set project active 
+                        project_status : 'active'
+                    }
+
+                    axios.post('/project',data)
+                    .then(res => {
+                        EventBus.$emit('alert',{
+                            name : err.message,
+                            type : 'danger',
+                            desc : res.data.message,
+                            id : Math.random(10000),
+                            time : 5000
+                        })
+                    })
+                    .catch(err => {
+                        Object.entries(err.response.data.errors).forEach(error => {
+                            err.response.data.errors[error[0]].forEach(e => {
+                                setTimeout(() => {
+                                    EventBus.$emit('alert',{
+                                        name : 'Success',
+                                        type : 'success',
+                                        desc : e,
+                                        id : Math.random(10000),
+                                        time : 5000
+                                    })
+                                },200)
+                            })
+                        })
+                        EventBus.$emit('alert',{
+                            name : "Error creating new project",
+                            type : 'danger',
+                            desc : err.response.message,
+                            id : Math.random(10000),
+                        })
+                    })
                 }
             },
             tabText(txt,i){
