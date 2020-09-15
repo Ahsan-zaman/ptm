@@ -53,8 +53,8 @@ import SideBar from './SideBar.vue'
                         icon: 'file-check'
                     },
                     {
-                        name : 'e-Auction',
-                        link: '/e-auction',
+                        name : 'Public tenders',
+                        link: '/public-tenders',
                         show: true,
                         icon: 'tags'
                     },

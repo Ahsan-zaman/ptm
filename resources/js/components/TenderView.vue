@@ -5,19 +5,18 @@
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 border-bottom">
                     <h1 class="h2">Public Tenders</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                        <span data-feather="calendar"></span>
-                        This week
-                    </button>
+                    <div class="btn-toolbar mb-2 mb-md-0 d-print-none">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Place Bid</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Send RFI</button>
+                        </div>
+                        <button @click="print" type="button" class="btn btn-sm btn-outline-secondary">
+                            Print
+                        </button>
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row g-0 mt-3">
+                    <div class="row mt-3">
                         <!-- {{$route.params.id}} -->
                         <div class="col-12 col-sm-8 col-lg-9 border-top border-left">
                             <div class="row border-bottom">
@@ -45,33 +44,115 @@
                                 <div class="py-2 col-8">14,000 SAR</div>
                             </div>
                         </div>
-                        <div style="min-height:150px" class="col-12 col-sm-4 col-lg-3 border d-flex flex-column">
+                        <div style="min-height:150px" class="col-12 col-sm-4 col-lg-3 border d-flex flex-column d-print-none">
                             <div style="flex-grow:1" class="mx-auto w-100" :style="`background:url('/assets/3.jpg') center/contain no-repeat`"></div>
                             <div class="d-flex flex-column align-items-center justify-content-center p-2 mb-2">
                                 <span class="text-success">
                                     13 Day - 16 Hour
                                 </span>
                                 <div class="progress w-100" style=" height:.5rem;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;transition:all 500ms ease-in-out 500ms;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tender dates</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Addresses</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Public file(s)</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                                <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+                                    <li class="nav-item mr-2" role="presentation">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tender dates</a>
+                                    </li>
+                                    <li class="nav-item mr-2" role="presentation">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Addresses</a>
+                                    </li>
+                                    <li class="nav-item mr-2" role="presentation">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Public file(s)</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="col-12">
+                                        <div class="row border py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Last Date to accept vendors questions and upload attachments	
+                                            </div>
+                                            <div class="col-6">
+                                                Date: 1442/02/04 <br>
+                                                Gregorian: 21/09/2020
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom border-left border-right py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Closing Date	
+                                            </div>
+                                            <div class="col-6">
+                                                Date: 1442/02/11 <br>
+                                                Gregorian: 28/09/2020 <br>
+                                                At time: 13:50
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom border-left border-right py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Bid Opening Date and Time		
+                                            </div>
+                                            <div class="col-6">
+                                                Date: 1442/02/11 <br>
+                                                Gregorian: 28/09/2020 <br>
+                                                At time: 14:00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="col-12">
+                                        <div class="row border py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Proposal submission address		
+                                            </div>
+                                            <div class="col-6">
+                                                Apply onile via the portal
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom border-left border-right py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Bid opening location	
+                                            </div>
+                                            <div class="col-6">
+                                                قم صندوق البريد : 10001
+                                                رمز المدينة : 13
+                                                الرمز البريدي : 31961
+                                                الهيئة الملكية بالجبيل
+                                                إدارة العقود والمشتريات
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom border-left border-right py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Execution Location		
+                                            </div>
+                                            <div class="col-6">
+                                                National
+                                                مدينة الجبيل الصناعية
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom border-left border-right py-2">
+                                            <div class="col-6 font-weight-bold text-primary">
+                                                Regions		
+                                            </div>
+                                            <div class="col-6">
+                                                Eastern Province
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <div class="col-12">
+                                        <div class="row border py-2">
+                                            <div @click="download" class="col-6 font-weight-bold hover link-primary">
+                                                Synopsis of contract.pdf
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -435,6 +516,14 @@ import SideBar from './SideBar.vue'
             if(!UserClass.loggedIn()){
                 this.$router.push('/')
             }
-        }
+        },
+        methods:{
+            download(){
+                alert('later')
+            },
+            print(){
+                window.print()
+            }
+        },
     }
 </script>

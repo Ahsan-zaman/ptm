@@ -98,8 +98,8 @@ __webpack_require__.r(__webpack_exports__);
         show: true,
         icon: 'file-check'
       }, {
-        name: 'e-Auction',
-        link: '/e-auction',
+        name: 'Public tenders',
+        link: '/public-tenders',
         show: true,
         icon: 'tags'
       }, {

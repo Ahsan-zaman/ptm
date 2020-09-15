@@ -6215,7 +6215,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", { staticClass: "text-center" }, [
-      _c("small", [_vm._v("@ 2020 All rights reserved")])
+      _c("small", [_vm._v("© 2020 All rights reserved")])
     ])
   }
 ]
@@ -21887,16 +21887,16 @@ __webpack_require__.r(__webpack_exports__);
       return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../components/StrategicSourcing.vue */ "./resources/js/components/StrategicSourcing.vue"));
     }
   }, {
-    path: '/e-auction',
-    name: 'eAuction',
+    path: '/public-tenders',
+    name: 'PublicTenders',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/EAuction.vue */ "./resources/js/components/EAuction.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ../components/PublicTenders.vue */ "./resources/js/components/PublicTenders.vue"));
     }
   }, {
-    path: '/e-auction/:id',
-    name: 'eAuction',
+    path: '/public-tenders/:id',
+    name: 'PublicTender',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ../components/TenderView.vue */ "./resources/js/components/TenderView.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! ../components/TenderView.vue */ "./resources/js/components/TenderView.vue"));
     }
   }, {
     path: '/approval-center',

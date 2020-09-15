@@ -23,98 +23,97 @@
                 <div class="card-body">
                     <transition-group name="slide-fade">
                         <form v-if="active == 0" ref="form1" :key="1" class="row g-3 needs-validation" novalidate>
+                            <h4 class="col-12">Project details</h4>
                             <div class="col-12 col-md-6 col-lg-4">
-                                <label for="rfr" class="form-label">Reason for requisition</label>
-                                <select class="form-select" v-model="reasonForRequisition" id="rfr" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Projects</option>
-                                <option>Other</option>
-                                </select>
+                                <label for="project_name" class="form-label">Project name</label>
+                                <input type="text" class="form-control" id="project_name" v-model="project_name" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
                                 <div class="invalid-feedback">
-                                    Please select a valid reason.
+                                    Please enter project name.
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4"> 
+                                <label for="category" class="form-label">Project category</label>
+                                <input class="form-control" list="catList" id="category" v-model="project_category" required>
+                                <datalist id="catList">
+                                    <option v-for="(c,i) in categories" :key="i" :value="c" >{{c}}</option>
+                                </datalist>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select project category.
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4">
-                                <label for="sp" class="form-label">Select project</label>
-                                <select class="form-select" id="sp" v-model="sp" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Projects</option>
-                                <option>Other</option>
-                                </select>
+                                <label for="price" class="form-label">Project price</label>
+                                <input type="number" class="form-control" id="price" v-model="project_price" required/>
                                 <div class="invalid-feedback">
-                                    Please select a project.
+                                    Please enter project budget/ contract price.
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good.
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <label for="erfr" class="form-label">Enter reason for requisition</label>
-                                <input type="text" class="form-control" placeholder="Enter reason" id="erfr" v-model="erfr" required>
+                            <div class="col-12">
+                                <label for="summary" class="form-label">Project summary</label>
+                                <textarea class="form-control" v-model="project_summary" rows="6" id="summary" placeholder="Deatails about this RFP" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter summary of the project.
+                                </div>
                                 <div class="valid-feedback">
                                 Looks good!
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <label for="budget" class="form-label">Budget</label>
-                                <select class="form-select" id="budget" v-model="budget" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Get custom budgets</option>
-                                <option>Other</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select a budget.
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <label for="ot" class="form-label">Order type</label>
-                                <select class="form-select" id="ot" v-model="ot" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Product</option>
-                                <option>Service</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select a budget.
-                                </div>
-                            </div>
                             <div class="col-12">
-                                <label for="Specification" class="form-label">Specification</label>
-                                <textarea class="form-control" v-model="specification" rows="8" id="Specification" placeholder="Deatails about this RFP" required></textarea>
+                                <label for="detail" class="form-label">Project details (BoQ)</label>
+                                <textarea class="form-control" v-model="boq" rows="6" id="detail" placeholder="Deatails about this RFP" required></textarea>
                                 <div class="invalid-feedback">
-                                    Please enter a RFX specification(s).
+                                    Please enter details of the project.
+                                </div>
+                                <div class="valid-feedback">
+                                Looks good!
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <label for="address" class="form-label">Address</label>
-                                <select class="form-select" id="address" v-model="address" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Get addresses</option>
-                                <option>Others</option>
-                                </select>
+                            <h4 class="col-12">Location details</h4>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <label for="district" class="form-label">District/Area</label>
+                                <input class="form-control" id="district" v-model="district" required/>
                                 <div class="invalid-feedback">
-                                    Please select address.
+                                    Please enter location district
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good.
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4">
-                                <label for="Commodity" class="form-label">Commodity</label>
-                                <input type="text" class="form-control" v-model="commodity" placeholder="Enter commodity" id="Commodity" required>
+                                <label for="city" class="form-label">City</label>
+                                <input class="form-control" id="city" v-model="city" required/>
                                 <div class="invalid-feedback">
-                                    Please provide a commodity.
+                                    Please enter location city
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good.
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4">
-                                <label for="Category" class="form-label">Category</label>
-                                <select class="form-select" id="Category" v-model="category" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option>Manually input later</option>
-                                <option>others</option>
-                                </select>
+                                <label for="country" class="form-label">Country</label>
+                                <input class="form-control" id="country" v-model="country" required/>
                                 <div class="invalid-feedback">
-                                    Please select a category.
+                                    Please enter location country
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good.
                                 </div>
                             </div>
+                            
                             <div class="col-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" v-model="publicRFX">
                                     <label class="form-check-label" >
-                                        Do you want to make this RFX public?
+                                        Make this Project public?
                                     </label>
                                 </div>
                             </div>
@@ -149,8 +148,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <label for="award" class="form-label">Estimated Award Date</label>
-                                <input type="date" :min="end" class="form-control" v-model="award" placeholder="Select award date" id="award" required>
+                                <label for="award" class="form-label">Date of last inquiry</label>
+                                <input type="date" :max="end" class="form-control" v-model="award" placeholder="Select award date" id="award" required>
                                 <div class="invalid-feedback">
                                     Please provide a valid date.
                                 </div>
@@ -169,7 +168,7 @@
                             <div v-if="payOpt == 'Milestone payment'">
                                 <label for="upfront" class="form-label">Upfront payment</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" id="upfront" placeholder="Enter percentage" required>
+                                    <input type="number" class="form-control" id="upfront" v-model="upfront" placeholder="Enter percentage" required>
                                     <span class="input-group-text" >%</span>
                                 </div>
                                 <div class="invalid-feedback">
@@ -210,7 +209,7 @@
                                         </div>
                                         <div v-for="(s,i) in mySuppliers" :key="s.id" @click="selectSup(i)" class="row hover link-dark my-2 border-bottom py-3">
                                             <div class="col-3 col-sm-2 col-lg-1">
-                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/cover no-repeat`" style="width:55px;height:55px"></div>
+                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/contain no-repeat`" style="width:55px;height:55px"></div>
                                             </div>
                                             <div class="col-7 col-sm-9 col-lg-10 d-flex flex-column justify-content-center">
                                                 <span class="font-weight-bold">{{s.name}}</span>
@@ -234,7 +233,7 @@
                                                             <use xlink:href="/assets/icons/bootstrap-icons.svg#search"/>
                                                         </svg>
                                                     </div>
-                                                    <input type="text" class="form-control border-left-0" placeholder="Search my suppliers">
+                                                    <input type="text" class="form-control border-left-0" placeholder="Search suppliers">
                                                     <button class="btn btn-outline-primary">Search</button>
                                                 </div>
                                             </div>
@@ -244,7 +243,7 @@
                                         </div>
                                         <div v-for="(s,i) in MPSuppliers" :key="s.id" @click="selectSup(i,'MP')" class="row hover link-dark my-2 border-bottom py-3">
                                             <div class="col-3 col-sm-2 col-lg-1">
-                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/cover no-repeat`" style="width:55px;height:55px"></div>
+                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/contain no-repeat`" style="width:55px;height:55px"></div>
                                             </div>
                                             <div class="col-7 col-sm-9 col-lg-10 d-flex flex-column justify-content-center">
                                                 <span>{{s.name}}</span>
@@ -300,48 +299,55 @@
                                             Overview
                                         </h5>
                                         <div class="row my-3">
-                                            <div class="col"><span class="text-primary">Reason for requisition</span><br>{{reasonForRequisition}}</div>
+                                            <div class="col-5"><span class="text-primary">Project Name</span></div>
+                                            <div class="col-7">{{project_name}}</div>
                                         </div>
                                         <div class="row my-3">
-                                            <div class="col-6">
-                                                <span class="text-primary">Order Type</span><br>
-                                                {{ot}}
+                                            <div class="col-5">
+                                                <span class="text-primary">Project Category</span>
                                             </div>
-                                            <div class="col-6">
-                                                <span class="text-primary">
-                                                    Visibility
-                                                </span><br>
+                                            <div class="col-7">
+                                                {{project_category}}
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-5">
+                                                <span class="text-primary">Project Type</span>
+                                            </div>
+                                            <div class="col-7">
                                                 {{publicRFX ? 'Public' : 'Private'}}
                                             </div>
                                         </div>
                                         <div class="row my-3">
-                                            <div class="col">
-                                                <span class="text-primary">
-                                                Description
-                                            </span><br>
-                                            {{specification}}
+                                            <div class="col-5">
+                                                <span class="text-primary">Project Price</span>
+                                            </div>
+                                            <div class="col-7">
+                                                {{project_price}}
                                             </div>
                                         </div>
                                         <div class="row my-3">
-                                            <div class="col">
-                                                <span class="text-primary">
-                                                Address
-                                            </span><br>
-                                            {{address}}
+                                            <div class="col-5">
+                                                <span class="text-primary">Summary</span>
+                                            </div>
+                                            <div class="col-7">
+                                                {{project_summary}}
                                             </div>
                                         </div>
                                         <div class="row my-3">
-                                            <div class="col-6">
-                                                <span class="text-primary">
-                                                    commodity
-                                                </span><br>
-                                                {{commodity}}
+                                            <div class="col-5">
+                                                <span class="text-primary">Project Details</span>
                                             </div>
-                                            <div class="col-6">
-                                                <span class="text-primary">
-                                                    category
-                                                </span><br>
-                                                {{category}}
+                                            <div class="col-7">
+                                                {{boq}}
+                                            </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-5">
+                                                <span class="text-primary">Location</span>
+                                            </div>
+                                            <div class="col-7">
+                                                {{district}}, {{city}}, {{country}}
                                             </div>
                                         </div>
                                     </div>
@@ -372,7 +378,7 @@
                                         <div class="row my-3">
                                             <div class="col">
                                                 <span class="text-primary">Estimated Award Date</span><br>
-                                            {{award}}
+                                            {{new Date(award).toLocaleDateString(undefined,{year: 'numeric', month: 'long', day: 'numeric'})}}
                                             </div>
                                         </div>
                                     </div>
@@ -382,7 +388,7 @@
                                         </h5>
                                         <div v-for="(s,i) in MPSuppliers" :key="s.id" @click="selectSup(i)" class="row hover link-dark my-2 border-bottom py-3">
                                             <div class="col-3">
-                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/cover no-repeat`" style="width:55px;height:55px"></div>
+                                                <div class="rounded shadow" :style="`background:url(${s.profile}) center/contain no-repeat`" style="width:55px;height:55px"></div>
                                             </div>
                                             <div class="col-9 d-flex flex-column justify-content-center">
                                                 <span class="font-weight-bold">{{s.name}}</span>
@@ -419,6 +425,14 @@ import { each } from 'highcharts'
         components:{ SideBar, Alert },
         data(){
             return{
+                tabs : [
+                    'Project Info',
+                    // 'Select Template',
+                    'Time Rule & payment',
+                    'Select Supplier',
+                    'Summary'
+                ],
+                active : 0,
                 links : [
                     {
                         name : 'Dashboard',
@@ -433,8 +447,8 @@ import { each } from 'highcharts'
                         icon: 'file-check'
                     },
                     {
-                        name : 'e-Auction',
-                        link: '/e-auction',
+                        name : 'Public tenders',
+                        link: '/public-tenders',
                         show: true,
                         icon: 'tags'
                     },
@@ -463,27 +477,259 @@ import { each } from 'highcharts'
                         icon:'gear'
                     },
                 ],
-                reasonForRequisitions:[
-                    ''
+                // First form
+                categories : [
+                    "Accommodation", 
+                    "Accounting Services", 
+                    "Actuarial Services", 
+                    "Administrative and support activities", 
+                    "Advertising and Marketing", 
+                    "Equipment", 
+                    "Agriculture", 
+                    "Forestry and Fisheries", 
+                    "Installation and Maintenance", 
+                    "Air Conditioning", 
+                    "HVAC", 
+                    "Air transport", 
+                    "Airport Equipment and Operations", 
+                    "Animal and Meat Trade", 
+                    "Animal Feed", 
+                    "Appliances", 
+                    "Architectural and Engineering Services", 
+                    "Armed Response", 
+                    "Arms and Ammunition", 
+                    "Arts", 
+                    "entertainment and recreation", 
+                    "Audio Visual Equipment", 
+                    "Audit Services - Technical", 
+                    "Operational", 
+                    "Financial", 
+                    "Compliance and Information Technology", 
+                    "Incinerators and Sterilisation Equipment", 
+                    "Automotive and Equipment Fluid Supplies", 
+                    "Certificates and Medals", 
+                    "Books",
+                    "Exploration and Geotechnical Drilling Services and Equipment", 
+                    "Brand Tracking and Media Monitoring Services", 
+                    "Building Upgrades and Maintenance", 
+                    "Burglar Proofing and Security Gates", 
+                    "Business Development and Governance", 
+                    "Car Wash Services", 
+                    "Carpeting", 
+                    "Tiling and Floor Covering", 
+                    "Carports", 
+                    "Shadeports and Awnings", 
+                    "Cash in Transit Services", 
+                    "Catering Services", 
+                    "CCTV", 
+                    "Access Control", 
+                    "Biometric Security and Alarm Systems", 
+                    "Chemical and Gas Supplies", 
+                    "Civil Engineering", 
+                    "Civil Works Services", 
+                    "Sewer", 
+                    "Plumbing and Engineering Supplies", 
+                    "Cleaning Services", 
+                    "Computer and Networking Equipment", 
+                    "Software and Support", 
+                    "Computer programming", 
+                    "Consultancy and related activities", 
+                    "Computer Software Supply and License Management", 
+                    "Concrete Products", 
+                    "Conference Facilities and Services", 
+                    "Construction and Building Services",  
+                    "Construction of buildings", 
+                    "Contact Centre and Call Centre Solutions", 
+                    "Copywriting", 
+                    "Cranes", 
+                    "Hoists", 
+                    "Forklifts and Lifting Equipment", 
+                    "Creative", 
+                    "Debt Collection and Debt Counselling Services", 
+                    "Demolition Services and Supplies", 
+                    "Reconnections and Meter Reading Services", 
+                    "Disposals and Auctions", 
+                    "Diving Equipment Supplies and Maintenance", 
+                    "Doors", 
+                    "Drones and Aerial photography", 
+                    "Dry Cleaning and Laundry Services and Equipment", 
+                    "Economic Development", 
+                    "Training", 
+                    "Electrical Engineering", 
+                    "Electrical Equipment and Supplies", 
+                    "Electrical Services", 
+                    "Emergency Response Equipment and Services", 
+                    "Employment and Recruitment Services", 
+                    "Engineering Consulting", 
+                    "Environmental Monitoring", 
+                    "Assessment and Consulting", 
+                    "Environmental Rehabilitation", 
+                    "Equipment Spares", 
+                    "Event Management Services and Event Logistics", 
+                    "Extraction of crude petroleum and natural gas", 
+                    "Facilitation and Moderation Services", 
+                    "Facilities Management", 
+                    "Fans and Blowers", 
+                    "Feasibility and Impact Studies", 
+                    "Fibre Optic Supplies", 
+                    "Fibreglass and Composite Materials", 
+                    "Filtration Equipment", 
+                    "Firefighting Equipment and Services", 
+                    "Flood Control and Stormwater Infrastructure", 
+                    "Food and Beverage Supplies", 
+                    "Forensic Services", 
+                    "Fuel and Petroleum Products", 
+                    "Fuel Management and Fuel Storage Tank Supply and Maintenance", 
+                    "Fundraising Services", 
+                    "Funeral and Body Removal Services", 
+                    "Furniture Supplies", 
+                    "Gardening Tools", 
+                    "Vegetation Management and Landscaping Services", 
+                    "Gas Supply Systems Installation and Maintenance", 
+                    "Gearbox Supplies", 
+                    "Generator Installation", 
+                    "Geotechnical and Geological Services", 
+                    "Glass Supply", 
+                    "Graphic Design and Branding", 
+                    "Guarding Services", 
+                    "Guy Wire Services", 
+                    "Hazardous Materials Handling", 
+                    "Housing Development", 
+                    "Human health and social work activities", 
+                    "Human Resources and Labour", 
+                    "Hydraulic and Pneumatic Tools and Equipment", 
+                    "Industrial and Plant Cleaning Services", 
+                    "Information and Communications Technology", 
+                    "Infrastructure Delivery Management", 
+                    "Inspection and Quality Assurance", 
+                    "Insurance and Medical Aid Services", 
+                    "Interior Design and Decorating", 
+                    "Internet Services - Connectivity", 
+                    "Websites", 
+                    "ISO Standards Certification Services", 
+                    "Kitchen Appliances and Accessories", 
+                    "Laboratory", 
+                    "Sampling and Analytical Equipment", 
+                    "Laboratory", 
+                    "Testing and Analytical Services", 
+                    "Land Surveying Services and Equipment", 
+                    "Law Enforcement & Legal Services", 
+                    "Legislation and regulation", 
+                    "Libraries", 
+                    "Archives", 
+                    "Museums and other Cultural Activities", 
+                    "Lifts & Escalators", 
+                    "Livestock Enclosures", 
+                    "Logistics", 
+                    "Freight Forwarding and Customs Clearing", 
+                    "Lubricant Supplies", 
+                    "Management Consulting", 
+                    "Manufacture and Supply of Textiles", 
+                    "Manufacture of basic metals", 
+                    "Manufacture of basic pharmaceutical products and pharmaceutical preparations", 
+                    "Manufacture of coke and refined petroleum products", 
+                    "Manufacture of computer", 
+                    "Manufacture of Electrical Equipment", 
+                    "Manufacture of fabricated metal products", 
+                    "Manufacture of food products", 
+                    "Manufacture of leather and related products", 
+                    "Manufacture of machinery and equipment n.e.c.",
+                    "Manufacture of motor vehicles", 
+                    "Manufacture of other non-metallic mineral products", 
+                    "Manufacture of other transport equipment", 
+                    "Manufacture of paper and paper products", 
+                    "Manufacture of wearing apparel", 
+                    "Market Research and Surveys", 
+                    "Mast Supply", 
+                    "Materials recovery", 
+                    "Mechanical Services", 
+                    "Mechanical Tools and Equipment and Power Tools", 
+                    "Medical Equipment and Supplies", 
+                    "Medical Services", 
+                    "Metal and Alloy Products", 
+                    "Mining and Industry Services and Equipment", 
+                    "Mining and quarrying", 
+                    "Video and television programme production", 
+                    "Sound recording and music publishing activities", 
+                    "Office Equipment Sales and Rental", 
+                    "Office Space and Property Rentals", 
+                    "Other manufacturing", 
+                    "Other mining and quarrying", 
+                    "Other personal service activities", 
+                    "Other professional", 
+                    "scientific and technical activities", 
+                    "Other service activities", 
+                    "Outsourcing", 
+                    "PA and Intercom Installation and Maintenance", 
+                    "Packaging Materials", 
+                    "Paint and Painting Supplies", 
+                    "Parking Systems Services and Equipment", 
+                    "Payment Services", 
+                    "Pension Funding", 
+                    "Personal Hygiene Products", 
+                    "Personal Protective Equipment (PPE)", 
+                    "Pest Control", 
+                    "Photography and Videography", 
+                    "Pipework", 
+                    "Plastic and Rubber Products", 
+                    "Plumbing", 
+                    "Pollution Control Equipment", 
+                    "Pool and Spa Installation and Maintenance", 
+                    "Printing Supplies and Stationery", 
+                    "Reproduction and Distribution Services", 
+                    "Procurement and Supply Chain Management", 
+                    "Professional Services", 
+                    "Programming and broadcasting activities", 
+                    "Project Management", 
+                    "Psychometric and Competency Assessments", 
+                    "Public Relations and Communication", 
+                    "Publishing activities", 
+                    "Quality Management Systems", 
+                    "Transcribing and Translation", 
+                    "Relocation and Moving Services", 
+                    "Renewable Energy", 
+                    "Repair", 
+                    "Research and development", 
+                    "Retail trade", 
+                    "Risk Management and Risk Assessment", 
+                    "Road Construction", 
+                    "Repairs and Maintenance", 
+                    "Road Marking Services and Supplies", 
+                    "Road Safety Equipment", 
+                    "Sensors", 
+                    "PLC and SCADA",
+                    "Shelving",
+                    "Shipping Container Sales and Conversions", 
+                    "Social Media Marketing and Management",
+                    "Supplies: Clothing/Textiles/Footwear", 
+                    "Supply and Delivery Services", 
+                    "Supply and Installation of Machinery and Equipment", 
+                    "Tank and Pipeline Cleaning", 
+                    "IP PBX", 
+                    "SIP", 
+                    "VoIP - Supplies", 
+                    "Town and Urban Planning", 
+                    "Traffic Engineering and Management", 
+                    "Transformer Oil Supplies and Processing", 
+                    "Transportation", 
+                    "Travel agency", 
+                    "TV and Satellite Dish Installation and Repairs", 
+                    "Vehicle Tracking and Fleet Management", 
+                    "Verification and Investigation Services", 
+                    "Water transport", 
+                    "Waterproofing", 
+                    "Welding Services",
                 ],
-                reasonForRequisition:'',
-                sp:'',
-                erfr:'',
-                budget:'',
-                ot:'',
-                specification:'',
-                address:'',
-                commodity:'',
-                category:'',
-                publicRFX:false,
-                tabs : [
-                    'Project Info',
-                    // 'Select Template',
-                    'Time Rule & payment',
-                    'Select Supplier',
-                    'Summary'
-                ],
-                active : 0,
+                project_name:'',
+                project_category:'',
+                project_price:'',
+                project_summary:'',
+                boq:'',
+                district:'',
+                city:'',
+                country:'',
+                publicRFX:null,
+                
                 // form2 
                 start:"",
                 end:"",
@@ -491,6 +737,8 @@ import { each } from 'highcharts'
                 endTime : ("0" + new Date().getHours()).substr(-2) + ":"+ new Date().getMinutes(),
                 award : "",
                 payOpt : "",
+                upfront : "",
+                // #rd form 
                 mySuppliers : [
                     // {
                     //     name : 'Procurement tender management',

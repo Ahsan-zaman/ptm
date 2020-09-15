@@ -10,8 +10,7 @@
                     <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                 </div>
-                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                    <span data-feather="calendar"></span>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
                     This week
                 </button>
                 </div>
@@ -73,7 +72,7 @@
                                     <div class="col-4 col-md-3">
                                         <div class="mx-auto" :style="`background:url('${tender.company_logo}') center/cover no-repeat`" style="width:90px;height:90px"></div>
                                     </div>
-                                    <router-link :to="`/e-auction/${tender.tender_no}`" class="col-8 col-md-9 text-decoration-none">
+                                    <router-link :to="`/public-tenders/${tender.tender_no}`" class="col-8 col-md-9 text-decoration-none">
                                         <h3 class="link-primary">{{tender.tender_name}}</h3>
                                         <span class="font-weight-bold">{{tender.company_name}}</span>
                                     </router-link>
@@ -152,8 +151,8 @@ import SideBar from './SideBar.vue'
                         icon: 'file-check'
                     },
                     {
-                        name : 'e-Auction',
-                        link: '/e-auction',
+                        name : 'Public tenders',
+                        link: '/public-tenders',
                         show: true,
                         icon: 'tags'
                     },

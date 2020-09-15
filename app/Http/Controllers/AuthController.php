@@ -43,6 +43,8 @@ class AuthController extends Controller
             'office_address' => $request->office_address,
         ]);
         $company->save();
+        $user->company_id = $company->id;
+        $user->save();
         return response()->json([
             'message' => "Registration successfull."
         ], 201);

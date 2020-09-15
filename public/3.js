@@ -432,6 +432,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -442,6 +448,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   data: function data() {
     return {
+      tabs: ['Project Info', // 'Select Template',
+      'Time Rule & payment', 'Select Supplier', 'Summary'],
+      active: 0,
       links: [{
         name: 'Dashboard',
         link: '/dashboard',
@@ -453,8 +462,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         show: true,
         icon: 'file-check'
       }, {
-        name: 'e-Auction',
-        link: '/e-auction',
+        name: 'Public tenders',
+        link: '/public-tenders',
         show: true,
         icon: 'tags'
       }, {
@@ -478,20 +487,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         show: false,
         icon: 'gear'
       }],
-      reasonForRequisitions: [''],
-      reasonForRequisition: '',
-      sp: '',
-      erfr: '',
-      budget: '',
-      ot: '',
-      specification: '',
-      address: '',
-      commodity: '',
-      category: '',
-      publicRFX: false,
-      tabs: ['Project Info', // 'Select Template',
-      'Time Rule & payment', 'Select Supplier', 'Summary'],
-      active: 0,
+      // First form
+      categories: ["Accommodation", "Accounting Services", "Actuarial Services", "Administrative and support activities", "Advertising and Marketing", "Equipment", "Agriculture", "Forestry and Fisheries", "Installation and Maintenance", "Air Conditioning", "HVAC", "Air transport", "Airport Equipment and Operations", "Animal and Meat Trade", "Animal Feed", "Appliances", "Architectural and Engineering Services", "Armed Response", "Arms and Ammunition", "Arts", "entertainment and recreation", "Audio Visual Equipment", "Audit Services - Technical", "Operational", "Financial", "Compliance and Information Technology", "Incinerators and Sterilisation Equipment", "Automotive and Equipment Fluid Supplies", "Certificates and Medals", "Books", "Exploration and Geotechnical Drilling Services and Equipment", "Brand Tracking and Media Monitoring Services", "Building Upgrades and Maintenance", "Burglar Proofing and Security Gates", "Business Development and Governance", "Car Wash Services", "Carpeting", "Tiling and Floor Covering", "Carports", "Shadeports and Awnings", "Cash in Transit Services", "Catering Services", "CCTV", "Access Control", "Biometric Security and Alarm Systems", "Chemical and Gas Supplies", "Civil Engineering", "Civil Works Services", "Sewer", "Plumbing and Engineering Supplies", "Cleaning Services", "Computer and Networking Equipment", "Software and Support", "Computer programming", "Consultancy and related activities", "Computer Software Supply and License Management", "Concrete Products", "Conference Facilities and Services", "Construction and Building Services", "Construction of buildings", "Contact Centre and Call Centre Solutions", "Copywriting", "Cranes", "Hoists", "Forklifts and Lifting Equipment", "Creative", "Debt Collection and Debt Counselling Services", "Demolition Services and Supplies", "Reconnections and Meter Reading Services", "Disposals and Auctions", "Diving Equipment Supplies and Maintenance", "Doors", "Drones and Aerial photography", "Dry Cleaning and Laundry Services and Equipment", "Economic Development", "Training", "Electrical Engineering", "Electrical Equipment and Supplies", "Electrical Services", "Emergency Response Equipment and Services", "Employment and Recruitment Services", "Engineering Consulting", "Environmental Monitoring", "Assessment and Consulting", "Environmental Rehabilitation", "Equipment Spares", "Event Management Services and Event Logistics", "Extraction of crude petroleum and natural gas", "Facilitation and Moderation Services", "Facilities Management", "Fans and Blowers", "Feasibility and Impact Studies", "Fibre Optic Supplies", "Fibreglass and Composite Materials", "Filtration Equipment", "Firefighting Equipment and Services", "Flood Control and Stormwater Infrastructure", "Food and Beverage Supplies", "Forensic Services", "Fuel and Petroleum Products", "Fuel Management and Fuel Storage Tank Supply and Maintenance", "Fundraising Services", "Funeral and Body Removal Services", "Furniture Supplies", "Gardening Tools", "Vegetation Management and Landscaping Services", "Gas Supply Systems Installation and Maintenance", "Gearbox Supplies", "Generator Installation", "Geotechnical and Geological Services", "Glass Supply", "Graphic Design and Branding", "Guarding Services", "Guy Wire Services", "Hazardous Materials Handling", "Housing Development", "Human health and social work activities", "Human Resources and Labour", "Hydraulic and Pneumatic Tools and Equipment", "Industrial and Plant Cleaning Services", "Information and Communications Technology", "Infrastructure Delivery Management", "Inspection and Quality Assurance", "Insurance and Medical Aid Services", "Interior Design and Decorating", "Internet Services - Connectivity", "Websites", "ISO Standards Certification Services", "Kitchen Appliances and Accessories", "Laboratory", "Sampling and Analytical Equipment", "Laboratory", "Testing and Analytical Services", "Land Surveying Services and Equipment", "Law Enforcement & Legal Services", "Legislation and regulation", "Libraries", "Archives", "Museums and other Cultural Activities", "Lifts & Escalators", "Livestock Enclosures", "Logistics", "Freight Forwarding and Customs Clearing", "Lubricant Supplies", "Management Consulting", "Manufacture and Supply of Textiles", "Manufacture of basic metals", "Manufacture of basic pharmaceutical products and pharmaceutical preparations", "Manufacture of coke and refined petroleum products", "Manufacture of computer", "Manufacture of Electrical Equipment", "Manufacture of fabricated metal products", "Manufacture of food products", "Manufacture of leather and related products", "Manufacture of machinery and equipment n.e.c.", "Manufacture of motor vehicles", "Manufacture of other non-metallic mineral products", "Manufacture of other transport equipment", "Manufacture of paper and paper products", "Manufacture of wearing apparel", "Market Research and Surveys", "Mast Supply", "Materials recovery", "Mechanical Services", "Mechanical Tools and Equipment and Power Tools", "Medical Equipment and Supplies", "Medical Services", "Metal and Alloy Products", "Mining and Industry Services and Equipment", "Mining and quarrying", "Video and television programme production", "Sound recording and music publishing activities", "Office Equipment Sales and Rental", "Office Space and Property Rentals", "Other manufacturing", "Other mining and quarrying", "Other personal service activities", "Other professional", "scientific and technical activities", "Other service activities", "Outsourcing", "PA and Intercom Installation and Maintenance", "Packaging Materials", "Paint and Painting Supplies", "Parking Systems Services and Equipment", "Payment Services", "Pension Funding", "Personal Hygiene Products", "Personal Protective Equipment (PPE)", "Pest Control", "Photography and Videography", "Pipework", "Plastic and Rubber Products", "Plumbing", "Pollution Control Equipment", "Pool and Spa Installation and Maintenance", "Printing Supplies and Stationery", "Reproduction and Distribution Services", "Procurement and Supply Chain Management", "Professional Services", "Programming and broadcasting activities", "Project Management", "Psychometric and Competency Assessments", "Public Relations and Communication", "Publishing activities", "Quality Management Systems", "Transcribing and Translation", "Relocation and Moving Services", "Renewable Energy", "Repair", "Research and development", "Retail trade", "Risk Management and Risk Assessment", "Road Construction", "Repairs and Maintenance", "Road Marking Services and Supplies", "Road Safety Equipment", "Sensors", "PLC and SCADA", "Shelving", "Shipping Container Sales and Conversions", "Social Media Marketing and Management", "Supplies: Clothing/Textiles/Footwear", "Supply and Delivery Services", "Supply and Installation of Machinery and Equipment", "Tank and Pipeline Cleaning", "IP PBX", "SIP", "VoIP - Supplies", "Town and Urban Planning", "Traffic Engineering and Management", "Transformer Oil Supplies and Processing", "Transportation", "Travel agency", "TV and Satellite Dish Installation and Repairs", "Vehicle Tracking and Fleet Management", "Verification and Investigation Services", "Water transport", "Waterproofing", "Welding Services"],
+      project_name: '',
+      project_category: '',
+      project_price: '',
+      project_summary: '',
+      boq: '',
+      district: '',
+      city: '',
+      country: '',
+      publicRFX: null,
       // form2 
       start: "",
       end: "",
@@ -499,6 +505,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       endTime: ("0" + new Date().getHours()).substr(-2) + ":" + new Date().getMinutes(),
       award: "",
       payOpt: "",
+      upfront: "",
+      // #rd form 
       mySuppliers: [// {
         //     name : 'Procurement tender management',
         //     description : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est maxime accusantium saepe dignissimos, impedit repudiandae perferendis quaerat blanditiis deleniti.',
@@ -876,78 +884,9 @@ var render = function() {
                             attrs: { novalidate: "" }
                           },
                           [
-                            _c(
-                              "div",
-                              { staticClass: "col-12 col-md-6 col-lg-4" },
-                              [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "form-label",
-                                    attrs: { for: "rfr" }
-                                  },
-                                  [_vm._v("Reason for requisition")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.reasonForRequisition,
-                                        expression: "reasonForRequisition"
-                                      }
-                                    ],
-                                    staticClass: "form-select",
-                                    attrs: { id: "rfr", required: "" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.reasonForRequisition = $event.target
-                                          .multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "option",
-                                      {
-                                        attrs: {
-                                          selected: "",
-                                          disabled: "",
-                                          value: ""
-                                        }
-                                      },
-                                      [_vm._v("Choose...")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Projects")]),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Other")])
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "invalid-feedback" }, [
-                                  _vm._v(
-                                    "\n                                Please select a valid reason.\n                            "
-                                  )
-                                ])
-                              ]
-                            ),
+                            _c("h4", { staticClass: "col-12" }, [
+                              _vm._v("Project details")
+                            ]),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -957,81 +896,9 @@ var render = function() {
                                   "label",
                                   {
                                     staticClass: "form-label",
-                                    attrs: { for: "sp" }
+                                    attrs: { for: "project_name" }
                                   },
-                                  [_vm._v("Select project")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.sp,
-                                        expression: "sp"
-                                      }
-                                    ],
-                                    staticClass: "form-select",
-                                    attrs: { id: "sp", required: "" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.sp = $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "option",
-                                      {
-                                        attrs: {
-                                          selected: "",
-                                          disabled: "",
-                                          value: ""
-                                        }
-                                      },
-                                      [_vm._v("Choose...")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Projects")]),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Other")])
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "invalid-feedback" }, [
-                                  _vm._v(
-                                    "\n                                Please select a project.\n                            "
-                                  )
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "col-12 col-md-6 col-lg-4" },
-                              [
-                                _c(
-                                  "label",
-                                  {
-                                    staticClass: "form-label",
-                                    attrs: { for: "erfr" }
-                                  },
-                                  [_vm._v("Enter reason for requisition")]
+                                  [_vm._v("Project name")]
                                 ),
                                 _vm._v(" "),
                                 _c("input", {
@@ -1039,31 +906,36 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.erfr,
-                                      expression: "erfr"
+                                      value: _vm.project_name,
+                                      expression: "project_name"
                                     }
                                   ],
                                   staticClass: "form-control",
                                   attrs: {
                                     type: "text",
-                                    placeholder: "Enter reason",
-                                    id: "erfr",
+                                    id: "project_name",
                                     required: ""
                                   },
-                                  domProps: { value: _vm.erfr },
+                                  domProps: { value: _vm.project_name },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
-                                      _vm.erfr = $event.target.value
+                                      _vm.project_name = $event.target.value
                                     }
                                   }
                                 }),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "valid-feedback" }, [
                                   _vm._v(
-                                    "\n                            Looks good!\n                            "
+                                    "\n                                Looks good!\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "invalid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Please enter project name.\n                            "
                                   )
                                 ])
                               ]
@@ -1077,67 +949,59 @@ var render = function() {
                                   "label",
                                   {
                                     staticClass: "form-label",
-                                    attrs: { for: "budget" }
+                                    attrs: { for: "category" }
                                   },
-                                  [_vm._v("Budget")]
+                                  [_vm._v("Project category")]
                                 ),
                                 _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.budget,
-                                        expression: "budget"
-                                      }
-                                    ],
-                                    staticClass: "form-select",
-                                    attrs: { id: "budget", required: "" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.budget = $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      }
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.project_category,
+                                      expression: "project_category"
                                     }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    list: "catList",
+                                    id: "category",
+                                    required: ""
                                   },
-                                  [
-                                    _c(
+                                  domProps: { value: _vm.project_category },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.project_category = $event.target.value
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "datalist",
+                                  { attrs: { id: "catList" } },
+                                  _vm._l(_vm.categories, function(c, i) {
+                                    return _c(
                                       "option",
-                                      {
-                                        attrs: {
-                                          selected: "",
-                                          disabled: "",
-                                          value: ""
-                                        }
-                                      },
-                                      [_vm._v("Choose...")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("option", [
-                                      _vm._v("Get custom budgets")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Other")])
-                                  ]
+                                      { key: i, domProps: { value: c } },
+                                      [_vm._v(_vm._s(c))]
+                                    )
+                                  }),
+                                  0
                                 ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "valid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Looks good!\n                            "
+                                  )
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "invalid-feedback" }, [
                                   _vm._v(
-                                    "\n                                Please select a budget.\n                            "
+                                    "\n                                Please select project category.\n                            "
                                   )
                                 ])
                               ]
@@ -1151,65 +1015,46 @@ var render = function() {
                                   "label",
                                   {
                                     staticClass: "form-label",
-                                    attrs: { for: "ot" }
+                                    attrs: { for: "price" }
                                   },
-                                  [_vm._v("Order type")]
+                                  [_vm._v("Project price")]
                                 ),
                                 _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.ot,
-                                        expression: "ot"
-                                      }
-                                    ],
-                                    staticClass: "form-select",
-                                    attrs: { id: "ot", required: "" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.ot = $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      }
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.project_price,
+                                      expression: "project_price"
                                     }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "number",
+                                    id: "price",
+                                    required: ""
                                   },
-                                  [
-                                    _c(
-                                      "option",
-                                      {
-                                        attrs: {
-                                          selected: "",
-                                          disabled: "",
-                                          value: ""
-                                        }
-                                      },
-                                      [_vm._v("Choose...")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Product")]),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("Service")])
-                                  ]
-                                ),
+                                  domProps: { value: _vm.project_price },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.project_price = $event.target.value
+                                    }
+                                  }
+                                }),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "invalid-feedback" }, [
                                   _vm._v(
-                                    "\n                                Please select a budget.\n                            "
+                                    "\n                                Please enter project budget/ contract price.\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "valid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Looks good.\n                            "
                                   )
                                 ])
                               ]
@@ -1220,9 +1065,9 @@ var render = function() {
                                 "label",
                                 {
                                   staticClass: "form-label",
-                                  attrs: { for: "Specification" }
+                                  attrs: { for: "summary" }
                                 },
-                                [_vm._v("Specification")]
+                                [_vm._v("Project summary")]
                               ),
                               _vm._v(" "),
                               _c("textarea", {
@@ -1230,31 +1075,37 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.specification,
-                                    expression: "specification"
+                                    value: _vm.project_summary,
+                                    expression: "project_summary"
                                   }
                                 ],
                                 staticClass: "form-control",
                                 attrs: {
-                                  rows: "8",
-                                  id: "Specification",
+                                  rows: "6",
+                                  id: "summary",
                                   placeholder: "Deatails about this RFP",
                                   required: ""
                                 },
-                                domProps: { value: _vm.specification },
+                                domProps: { value: _vm.project_summary },
                                 on: {
                                   input: function($event) {
                                     if ($event.target.composing) {
                                       return
                                     }
-                                    _vm.specification = $event.target.value
+                                    _vm.project_summary = $event.target.value
                                   }
                                 }
                               }),
                               _vm._v(" "),
                               _c("div", { staticClass: "invalid-feedback" }, [
                                 _vm._v(
-                                  "\n                                Please enter a RFX specification(s).\n                            "
+                                  "\n                                Please enter summary of the project.\n                            "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "valid-feedback" }, [
+                                _vm._v(
+                                  "\n                            Looks good!\n                            "
                                 )
                               ])
                             ]),
@@ -1264,67 +1115,53 @@ var render = function() {
                                 "label",
                                 {
                                   staticClass: "form-label",
-                                  attrs: { for: "address" }
+                                  attrs: { for: "detail" }
                                 },
-                                [_vm._v("Address")]
+                                [_vm._v("Project details (BoQ)")]
                               ),
                               _vm._v(" "),
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.address,
-                                      expression: "address"
-                                    }
-                                  ],
-                                  staticClass: "form-select",
-                                  attrs: { id: "address", required: "" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.address = $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    }
+                              _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.boq,
+                                    expression: "boq"
                                   }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  rows: "6",
+                                  id: "detail",
+                                  placeholder: "Deatails about this RFP",
+                                  required: ""
                                 },
-                                [
-                                  _c(
-                                    "option",
-                                    {
-                                      attrs: {
-                                        selected: "",
-                                        disabled: "",
-                                        value: ""
-                                      }
-                                    },
-                                    [_vm._v("Choose...")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("option", [_vm._v("Get addresses")]),
-                                  _vm._v(" "),
-                                  _c("option", [_vm._v("Others")])
-                                ]
-                              ),
+                                domProps: { value: _vm.boq },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.boq = $event.target.value
+                                  }
+                                }
+                              }),
                               _vm._v(" "),
                               _c("div", { staticClass: "invalid-feedback" }, [
                                 _vm._v(
-                                  "\n                                Please select address.\n                            "
+                                  "\n                                Please enter details of the project.\n                            "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "valid-feedback" }, [
+                                _vm._v(
+                                  "\n                            Looks good!\n                            "
                                 )
                               ])
+                            ]),
+                            _vm._v(" "),
+                            _c("h4", { staticClass: "col-12" }, [
+                              _vm._v("Location details")
                             ]),
                             _vm._v(" "),
                             _c(
@@ -1335,9 +1172,9 @@ var render = function() {
                                   "label",
                                   {
                                     staticClass: "form-label",
-                                    attrs: { for: "Commodity" }
+                                    attrs: { for: "district" }
                                   },
-                                  [_vm._v("Commodity")]
+                                  [_vm._v("District/Area")]
                                 ),
                                 _vm._v(" "),
                                 _c("input", {
@@ -1345,31 +1182,32 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.commodity,
-                                      expression: "commodity"
+                                      value: _vm.district,
+                                      expression: "district"
                                     }
                                   ],
                                   staticClass: "form-control",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Enter commodity",
-                                    id: "Commodity",
-                                    required: ""
-                                  },
-                                  domProps: { value: _vm.commodity },
+                                  attrs: { id: "district", required: "" },
+                                  domProps: { value: _vm.district },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
-                                      _vm.commodity = $event.target.value
+                                      _vm.district = $event.target.value
                                     }
                                   }
                                 }),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "invalid-feedback" }, [
                                   _vm._v(
-                                    "\n                                Please provide a commodity.\n                            "
+                                    "\n                                Please enter location district\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "valid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Looks good.\n                            "
                                   )
                                 ])
                               ]
@@ -1383,67 +1221,91 @@ var render = function() {
                                   "label",
                                   {
                                     staticClass: "form-label",
-                                    attrs: { for: "Category" }
+                                    attrs: { for: "city" }
                                   },
-                                  [_vm._v("Category")]
+                                  [_vm._v("City")]
                                 ),
                                 _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.category,
-                                        expression: "category"
-                                      }
-                                    ],
-                                    staticClass: "form-select",
-                                    attrs: { id: "Category", required: "" },
-                                    on: {
-                                      change: function($event) {
-                                        var $$selectedVal = Array.prototype.filter
-                                          .call($event.target.options, function(
-                                            o
-                                          ) {
-                                            return o.selected
-                                          })
-                                          .map(function(o) {
-                                            var val =
-                                              "_value" in o ? o._value : o.value
-                                            return val
-                                          })
-                                        _vm.category = $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
-                                      }
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.city,
+                                      expression: "city"
                                     }
-                                  },
-                                  [
-                                    _c(
-                                      "option",
-                                      {
-                                        attrs: {
-                                          selected: "",
-                                          disabled: "",
-                                          value: ""
-                                        }
-                                      },
-                                      [_vm._v("Choose...")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("option", [
-                                      _vm._v("Manually input later")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", [_vm._v("others")])
-                                  ]
-                                ),
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { id: "city", required: "" },
+                                  domProps: { value: _vm.city },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.city = $event.target.value
+                                    }
+                                  }
+                                }),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "invalid-feedback" }, [
                                   _vm._v(
-                                    "\n                                Please select a category.\n                            "
+                                    "\n                                Please enter location city\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "valid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Looks good.\n                            "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col-12 col-md-6 col-lg-4" },
+                              [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "form-label",
+                                    attrs: { for: "country" }
+                                  },
+                                  [_vm._v("Country")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.country,
+                                      expression: "country"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: { id: "country", required: "" },
+                                  domProps: { value: _vm.country },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.country = $event.target.value
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "invalid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Please enter location country\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "valid-feedback" }, [
+                                  _vm._v(
+                                    "\n                                Looks good.\n                            "
                                   )
                                 ])
                               ]
@@ -1496,7 +1358,7 @@ var render = function() {
                                   { staticClass: "form-check-label" },
                                   [
                                     _vm._v(
-                                      "\n                                    Do you want to make this RFX public?\n                                "
+                                      "\n                                    Make this Project public?\n                                "
                                     )
                                   ]
                                 )
@@ -1701,7 +1563,7 @@ var render = function() {
                                   staticClass: "form-label",
                                   attrs: { for: "award" }
                                 },
-                                [_vm._v("Estimated Award Date")]
+                                [_vm._v("Date of last inquiry")]
                               ),
                               _vm._v(" "),
                               _c("input", {
@@ -1716,7 +1578,7 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "date",
-                                  min: _vm.end,
+                                  max: _vm.end,
                                   placeholder: "Select award date",
                                   id: "award",
                                   required: ""
@@ -1820,12 +1682,29 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "input-group" }, [
                                     _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.upfront,
+                                          expression: "upfront"
+                                        }
+                                      ],
                                       staticClass: "form-control",
                                       attrs: {
                                         type: "number",
                                         id: "upfront",
                                         placeholder: "Enter percentage",
                                         required: ""
+                                      },
+                                      domProps: { value: _vm.upfront },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.upfront = $event.target.value
+                                        }
                                       }
                                     }),
                                     _vm._v(" "),
@@ -2087,7 +1966,7 @@ var render = function() {
                                                     style:
                                                       "background:url(" +
                                                       s.profile +
-                                                      ") center/cover no-repeat"
+                                                      ") center/contain no-repeat"
                                                   })
                                                 ]
                                               ),
@@ -2227,7 +2106,7 @@ var render = function() {
                                                     attrs: {
                                                       type: "text",
                                                       placeholder:
-                                                        "Search my suppliers"
+                                                        "Search suppliers"
                                                     }
                                                   }),
                                                   _vm._v(" "),
@@ -2302,7 +2181,7 @@ var render = function() {
                                                     style:
                                                       "background:url(" +
                                                       s.profile +
-                                                      ") center/cover no-repeat"
+                                                      ") center/contain no-repeat"
                                                   })
                                                 ]
                                               ),
@@ -2632,43 +2511,47 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "row my-3" }, [
-                                    _c("div", { staticClass: "col" }, [
+                                    _c("div", { staticClass: "col-5" }, [
                                       _c(
                                         "span",
                                         { staticClass: "text-primary" },
-                                        [_vm._v("Reason for requisition")]
-                                      ),
-                                      _c("br"),
-                                      _vm._v(_vm._s(_vm.reasonForRequisition))
+                                        [_vm._v("Project Name")]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-7" }, [
+                                      _vm._v(_vm._s(_vm.project_name))
                                     ])
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "row my-3" }, [
-                                    _c("div", { staticClass: "col-6" }, [
+                                    _c("div", { staticClass: "col-5" }, [
                                       _c(
                                         "span",
                                         { staticClass: "text-primary" },
-                                        [_vm._v("Order Type")]
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "\n                                            " +
-                                          _vm._s(_vm.ot) +
-                                          "\n                                        "
+                                        [_vm._v("Project Category")]
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "col-6" }, [
+                                    _c("div", { staticClass: "col-7" }, [
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.project_category) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-5" }, [
                                       _c(
                                         "span",
                                         { staticClass: "text-primary" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                Visibility\n                                            "
-                                          )
-                                        ]
-                                      ),
-                                      _c("br"),
+                                        [_vm._v("Project Type")]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-7" }, [
                                       _vm._v(
                                         "\n                                            " +
                                           _vm._s(
@@ -2680,78 +2563,76 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "row my-3" }, [
-                                    _c("div", { staticClass: "col" }, [
+                                    _c("div", { staticClass: "col-5" }, [
                                       _c(
                                         "span",
                                         { staticClass: "text-primary" },
-                                        [
-                                          _vm._v(
-                                            "\n                                            Description\n                                        "
-                                          )
-                                        ]
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "\n                                        " +
-                                          _vm._s(_vm.specification) +
-                                          "\n                                        "
-                                      )
-                                    ])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "row my-3" }, [
-                                    _c("div", { staticClass: "col" }, [
-                                      _c(
-                                        "span",
-                                        { staticClass: "text-primary" },
-                                        [
-                                          _vm._v(
-                                            "\n                                            Address\n                                        "
-                                          )
-                                        ]
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "\n                                        " +
-                                          _vm._s(_vm.address) +
-                                          "\n                                        "
-                                      )
-                                    ])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "row my-3" }, [
-                                    _c("div", { staticClass: "col-6" }, [
-                                      _c(
-                                        "span",
-                                        { staticClass: "text-primary" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                commodity\n                                            "
-                                          )
-                                        ]
-                                      ),
-                                      _c("br"),
-                                      _vm._v(
-                                        "\n                                            " +
-                                          _vm._s(_vm.commodity) +
-                                          "\n                                        "
+                                        [_vm._v("Project Price")]
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "col-6" }, [
+                                    _c("div", { staticClass: "col-7" }, [
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.project_price) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-5" }, [
                                       _c(
                                         "span",
                                         { staticClass: "text-primary" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                category\n                                            "
-                                          )
-                                        ]
-                                      ),
-                                      _c("br"),
+                                        [_vm._v("Summary")]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-7" }, [
                                       _vm._v(
                                         "\n                                            " +
-                                          _vm._s(_vm.category) +
+                                          _vm._s(_vm.project_summary) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-5" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Project Details")]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-7" }, [
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.boq) +
+                                          "\n                                        "
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row my-3" }, [
+                                    _c("div", { staticClass: "col-5" }, [
+                                      _c(
+                                        "span",
+                                        { staticClass: "text-primary" },
+                                        [_vm._v("Location")]
+                                      )
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-7" }, [
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(_vm.district) +
+                                          ", " +
+                                          _vm._s(_vm.city) +
+                                          ", " +
+                                          _vm._s(_vm.country) +
                                           "\n                                        "
                                       )
                                     ])
@@ -2858,7 +2739,15 @@ var render = function() {
                                       _c("br"),
                                       _vm._v(
                                         "\n                                        " +
-                                          _vm._s(_vm.award) +
+                                          _vm._s(
+                                            new Date(
+                                              _vm.award
+                                            ).toLocaleDateString(undefined, {
+                                              year: "numeric",
+                                              month: "long",
+                                              day: "numeric"
+                                            })
+                                          ) +
                                           "\n                                        "
                                       )
                                     ])
@@ -2903,7 +2792,7 @@ var render = function() {
                                             style:
                                               "background:url(" +
                                               s.profile +
-                                              ") center/cover no-repeat"
+                                              ") center/contain no-repeat"
                                           })
                                         ]),
                                         _vm._v(" "),

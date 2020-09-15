@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('mobile_no');
             $table->string('acc_type', 32);
+            $table->integer('company_id')->nullable();
         });
 
         DB::update("ALTER TABLE users AUTO_INCREMENT = 100000;");

@@ -187,8 +187,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         show: true,
         icon: 'file-check'
       }, {
-        name: 'e-Auction',
-        link: '/e-auction',
+        name: 'Public tenders',
+        link: '/public-tenders',
         show: true,
         icon: 'tags'
       }, {

@@ -7,7 +7,7 @@
         <Loader :isLoading="isLoading"/>
         <alert :alerts="alerts"/>
         <footer class="text-center">
-            <small>@ 2020 All rights reserved</small>
+            <small>&#169; 2020 All rights reserved</small>
         </footer>
     </div>
 </template>
